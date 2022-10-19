@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 100%;
+    color: #383838;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container{
+    padding: 30px 105px;
+    max-width: 1440px;
+    background-color: #FFFFFF;
+}

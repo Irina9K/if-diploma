@@ -1,11 +1,10 @@
-import SectionHomes from './SectionHomes';
+import React from 'react';
+import Header from './components/Header/header';
 
-function App() {
-  return (
-        <div>
-            <SectionHomes />
-        </div>
-  );
-}
+const App = () => (
+      <div>
+        <Header/>
+      </div>
+);
 
 export default App;

@@ -1,0 +1,24 @@
+.header_container{
+    max-width: 1230px;
+    max-height: 142px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_icon{
+    max-width: 172px;
+    max-height: 32px;
+}
+
+.input_search{
+    width: 500px;
+    height: 48px;
+    border: 2px solid #FF5D4F;
+    border-radius: 8px;
+}
+
+.name_log{
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+}
