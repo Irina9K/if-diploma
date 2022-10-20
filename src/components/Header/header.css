@@ -1,24 +1,69 @@
-.header_container{
-    max-width: 1230px;
-    max-height: 142px;
-    display: flex;
-    justify-content: space-between;
+header {
+  width: 100%;
 }
 
-.logo_icon{
-    max-width: 172px;
-    max-height: 32px;
+.header_container {
+  max-width: 1230px;
+  margin: 0 auto;
+  max-height: 142px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.input_search{
-    width: 500px;
-    height: 48px;
-    border: 2px solid #FF5D4F;
-    border-radius: 8px;
+.logo_icon {
+  width: 63%;
+  max-height: 32px;
+  margin-right: 20px;
 }
 
-.name_log{
-    display: flex;
-    justify-content: space-between;
-    width: 180px;
+.input_search {
+  width: 77%;
+  height: 48px;
+  border: 2px solid #ff5d4f;
+  border-radius: 8px;
+}
+
+.wrapper_logo_search {
+  display: flex;
+  width: 62%;
+  justify-content: space-between;
+}
+
+nav {
+  font-size: 20px;
+  font-weight: 700;
+  width: 26%;
+}
+
+.nav_list {
+  list-style-type: none;
+}
+
+.nav_logout .nav_item:nth-child(2) {
+  padding-left: 48px;
+}
+
+.nav_logout {
+  display:flex;
+  justify-content: flex-end;
+}
+
+.nav_login {
+  display: none;
+  justify-content: space-between;
+  font-size: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.rectangle_user_icon{
+width: 36px;
+  height: 36px;
+}
+
+.arrow_icon{
+  width: 16px;
+  height: 10px;
 }
