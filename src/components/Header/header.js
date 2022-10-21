@@ -2,9 +2,11 @@ import React from 'react';
 import IconsSVG from '../../assets/img/sprite.svg';
 import './header.css';
 import '../../assets/css/style.css';
+import SignUp from '../Sign up/signUp';
 
 const Header = () => (
   <header>
+    <SignUp/>
     <div className="header_container container">
       <div className="wrapper_logo_search">
         <div className="header_logo">
@@ -12,6 +14,10 @@ const Header = () => (
             <use xlinkHref={`${IconsSVG}#logo_fox_library`} />
           </svg>
         </div>
+
+        <svg className="search_icon">
+          <use xlinkHref={`${IconsSVG}#search`} />
+        </svg>
 
         <input
           className="input_search"
@@ -44,6 +50,7 @@ const Header = () => (
           </div>
         </ul>
       </nav>
+
     </div>
   </header>
 );

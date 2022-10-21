@@ -1,5 +1,7 @@
 header {
   width: 100%;
+  position: relative ;
+  color: #616161;
 }
 
 .header_container {
@@ -10,6 +12,7 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  position: relative;
 }
 
 .logo_icon {
@@ -18,11 +21,24 @@ header {
   margin-right: 20px;
 }
 
+.search_icon{
+  position: absolute;
+  top: 36%;
+  right: 59%;
+  height: 18px;
+}
+
 .input_search {
   width: 77%;
   height: 48px;
   border: 2px solid #ff5d4f;
   border-radius: 8px;
+}
+
+.input_search::placeholder{
+  padding-left: 50px;
+  color: #B5B5B5;
+  font-size: 16px;
 }
 
 .wrapper_logo_search {

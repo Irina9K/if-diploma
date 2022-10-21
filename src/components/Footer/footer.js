@@ -31,7 +31,7 @@ const Footer = () => (
         </nav>
       </div>
       <div className="footer_connected">
-        <p className='footer_connect'>Stay connected</p>
+        <p className="footer_connect">Stay connected</p>
 
         <svg className="instagram_icon">
           <use xlinkHref={`${IconsSVG}#instagram`} />
