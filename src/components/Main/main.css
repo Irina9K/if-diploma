@@ -1,0 +1,13 @@
+main {
+  width: 100%;
+}
+
+.main_container {
+  margin: 0 auto;
+  min-height: 790px;
+}
+
+.main_img {
+  max-width: 100%;
+  min-height: 494px;
+}

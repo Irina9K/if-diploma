@@ -7,7 +7,7 @@
 }
 
 body {
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   max-width: 100%;
   color: #383838;
   font-family: 'Open Sans', sans-serif;
@@ -17,7 +17,12 @@ a {
   text-decoration: none;
 }
 
+.nav_list {
+  list-style-type: none;
+}
+
 .container {
+  margin: 0 auto;
   padding: 30px 105px;
   max-width: 1440px;
   background-color: #ffffff;

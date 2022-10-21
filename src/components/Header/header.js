@@ -21,7 +21,7 @@ const Header = () => (
         ></input>
       </div>
 
-      <nav className="nav">
+      <nav>
         <ul className="nav_list">
           <div className="nav_logout">
             <li className="nav_item">Log In</li>
