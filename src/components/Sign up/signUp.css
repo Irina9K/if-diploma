@@ -1,10 +1,19 @@
-.container_background{
-    display: none;
-    width: 100%;
-    height: 900px;
-    position: absolute;
-    z-index:1;
-    background-color: rgba(181, 181, 181, 0.8);;
+.container_background {
+  display: none;
+  width: 100%;
+  height: 900px;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(181, 181, 181, 0.8);
+}
+
+.container_sign {
+  margin: 120px auto;
+  width: 384px;
+  height: 537px;
+  background-color: #ffffff;
+  border: 1px solid #cecece;
+  border-radius: 8px;
 }
 
 .title__sign {
@@ -32,20 +41,19 @@ label {
 
 input {
   width: 100%;
-    margin-bottom: 16px;
+  margin-bottom: 16px;
   height: 44px;
-  border: 2px solid #B5B5B5;
+  border: 2px solid #b5b5b5;
   border-radius: 8px;
-
 }
 
 .input__email {
   margin-bottom: 30px;
 }
 
-.close_icon{
-    position: absolute;
-    width: 16px;
-    bottom: 82%;
-    right: 5%;
+.close_icon {
+  position: absolute;
+  width: 16px;
+  bottom: 82%;
+  right: 5%;
 }

@@ -6,7 +6,7 @@ import SignUp from '../Sign up/signUp';
 
 const Header = () => (
   <header>
-    <SignUp/>
+    <SignUp />
     <div className="header_container container">
       <div className="wrapper_logo_search">
         <div className="header_logo">
@@ -50,7 +50,6 @@ const Header = () => (
           </div>
         </ul>
       </nav>
-
     </div>
   </header>
 );
