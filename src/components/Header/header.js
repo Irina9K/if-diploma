@@ -2,11 +2,11 @@ import React from 'react';
 import IconsSVG from '../../assets/img/sprite.svg';
 import './header.css';
 import '../../assets/css/style.css';
-import SignUp from '../Sign up/signUp';
+import Auth from '../Auth/auth';
 
 const Header = () => (
   <header>
-    <SignUp />
+    <Auth />
     <div className="header_container container">
       <div className="wrapper_logo_search">
         <div className="header_logo">

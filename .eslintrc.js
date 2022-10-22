@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ['react', 'babel', 'import'],
   rules: {
+    'no-underscore-dangle': 'off',
     'react/prop-types': 'off',
     'object-curly-newline': [
       'error',

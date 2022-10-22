@@ -1,5 +1,5 @@
-.container_background {
-  display: none;
+.container_backgroundBlock {
+  display: block;
   width: 100%;
   height: 900px;
   position: absolute;
@@ -7,10 +7,30 @@
   background-color: rgba(181, 181, 181, 0.8);
 }
 
+.container_backgroundNone {
+  display: none;
+}
+
+.signupNone{
+  display: none;
+}
+
+.signupBlock{
+  display: block;
+}
+
+.loginNone{
+  display: none;
+}
+
+.loginBlock{
+  display: block;
+}
+
 .container_sign {
   margin: 120px auto;
   width: 384px;
-  height: 537px;
+  min-height: 369px;
   background-color: #ffffff;
   border: 1px solid #cecece;
   border-radius: 8px;
