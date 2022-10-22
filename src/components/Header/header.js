@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import IconsSVG from '../../assets/img/sprite.svg';
@@ -8,18 +8,28 @@ import Auth from '../Auth/auth';
 import { logOutAction } from '../../store/actions';
 
 const Header = () => {
+  const [showNavigation, setshowNavigation] = useState(false);
+
+
   const conditionReducer = useSelector((state) => state.isLogin);
+
+
   const dispatch = useDispatch();
 
-  console.log(conditionReducer);
+
+
   function showLogIn() {
     dispatch(logOutAction());
   }
 
   return (
     <header>
-      <Auth />
-      <div className="header_container container">
+      <Auth setshowNavigation={setshowNavigation}/>
+      <div
+        className={`container ${
+          conditionReducer ? 'header_containerBlock' : 'header_containerNone'
+        }`}
+      >
         <div className="wrapper_logo_search">
           <div className="header_logo">
             <svg className="logo_icon">
@@ -41,16 +51,14 @@ const Header = () => {
 
         <nav>
           <ul className="nav_list">
-            <div className="nav_logout">
-              <li
-                  onClick={showLogIn}
-                  className="nav_item">
+            <div className={!showNavigation ? 'nav_logoutBlock' : 'nav_logoutNone'}>
+              <li onClick={showLogIn} className="nav_item">
                 Log In
               </li>
               <li className="nav_item">Sign up</li>
             </div>
 
-            <div className="nav_login">
+            <div className={showNavigation ? 'nav_loginBlock' : 'nav_loginNone'}>
               <li className="nav_item">All books</li>
               <li className="nav_item">Your orders</li>
               <li>

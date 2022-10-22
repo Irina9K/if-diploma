@@ -8,7 +8,7 @@ import '../../assets/css/button.css';
 import { users } from '../../constants/user-credentials.constants';
 import { logInAction } from '../../store/actions';
 
-const Auth = () => {
+const Auth = ({setshowNavigation}) => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
   const conditionReducer = useSelector((state) => state.isLogin);
@@ -22,6 +22,7 @@ const Auth = () => {
         }
       });
     }
+    setshowNavigation(true)
   }
 
   function checkUserName(e) {
@@ -35,9 +36,7 @@ const Auth = () => {
   }
 
   return (
-    <div
-        className={conditionReducer ? 'container_backgroundNone' : 'container_backgroundBlock'}
-    >
+    <div className={conditionReducer ? 'container_backgroundNone' : 'container_backgroundBlock'}>
       <div className="container_sign">
         <div className="title__sign">Welcome to Fox Library</div>
         <form className="wrapper__input--value">

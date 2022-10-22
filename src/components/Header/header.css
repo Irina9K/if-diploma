@@ -1,10 +1,10 @@
 header {
   width: 100%;
-  position: relative ;
+  position: relative;
   color: #616161;
 }
 
-.header_container {
+.header_containerBlock {
   /*max-width: 1230px;*/
   /*margin: 0 auto;*/
   max-height: 142px;
@@ -15,13 +15,17 @@ header {
   position: relative;
 }
 
+.header_containerNone {
+  display: none;
+}
+
 .logo_icon {
   width: 63%;
   max-height: 32px;
   margin-right: 20px;
 }
 
-.search_icon{
+.search_icon {
   position: absolute;
   top: 36%;
   right: 62%;
@@ -35,9 +39,9 @@ header {
   border-radius: 8px;
 }
 
-.input_search::placeholder{
+.input_search::placeholder {
   padding-left: 50px;
-  color: #B5B5B5;
+  color: #b5b5b5;
   font-size: 16px;
 }
 
@@ -57,18 +61,22 @@ nav {
   list-style-type: none;
 }
 
-.nav_logout .nav_item:nth-child(2) {
+.nav_logoutBlock .nav_item:nth-child(2) {
   padding-left: 48px;
 }
 
-.nav_logout {
-  display:flex;
+.nav_logoutBlock {
+  display: flex;
   justify-content: flex-end;
   cursor: pointer;
 }
 
-.nav_login {
+.nav_logoutNone {
   display: none;
+}
+
+.nav_loginBlock {
+  display: flex;
   justify-content: space-between;
   font-size: 16px;
   flex-wrap: wrap;
@@ -76,12 +84,16 @@ nav {
   cursor: pointer;
 }
 
-.rectangle_user_icon{
-width: 36px;
+.nav_loginNone {
+  display: none;
+}
+
+.rectangle_user_icon {
+  width: 36px;
   height: 36px;
 }
 
-.arrow_icon{
+.arrow_icon {
   width: 16px;
   height: 10px;
 }

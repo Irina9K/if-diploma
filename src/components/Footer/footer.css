@@ -1,14 +1,18 @@
 footer {
   width: 100%;
-  display: none;
+  /*display: none;*/
 }
 
-.footer_container {
+.footer_containerBlock {
   margin: 0 auto;
   min-height: 200px;
   background-color: #d3ebf9;
   display: flex;
   justify-content: space-between;
+}
+
+.footer_containerNone {
+  display: none;
 }
 
 .footer_col {
