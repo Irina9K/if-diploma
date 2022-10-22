@@ -4,7 +4,7 @@ header {
   color: #616161;
 }
 
-.header_containerBlock {
+.header_container {
   /*max-width: 1230px;*/
   /*margin: 0 auto;*/
   max-height: 142px;
@@ -15,9 +15,7 @@ header {
   position: relative;
 }
 
-.header_containerNone {
-  display: none;
-}
+
 
 .logo_icon {
   width: 63%;
@@ -45,10 +43,22 @@ header {
   font-size: 16px;
 }
 
-.wrapper_logo_search {
+.wrapper_logo_searchBlock {
   display: flex;
   width: 62%;
   justify-content: space-between;
+}
+
+.wrapper_logo_searchNone {
+  display: none;
+}
+
+.nav_headerNone{
+  display: none;
+}
+
+.nav_headerBlock{
+  display: block;
 }
 
 nav {
@@ -86,6 +96,10 @@ nav {
 
 .nav_loginNone {
   display: none;
+}
+
+.nav_loginBlock .nav_item:nth-child(1){
+  color: #FF5D4F;
 }
 
 .rectangle_user_icon {

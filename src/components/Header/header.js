@@ -10,13 +10,12 @@ import { logOutAction } from '../../store/actions';
 const Header = () => {
   const [showNavigation, setshowNavigation] = useState(false);
 
-
-  const conditionReducer = useSelector((state) => state.isLogin);
-
+  const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
+  // const isShowContent = useSelector((state) => state.reducerContent.isShow)
+  // console.log(loginCondition)
+  // console.log(isShowContent)
 
   const dispatch = useDispatch();
-
-
 
   function showLogIn() {
     dispatch(logOutAction());
@@ -24,13 +23,11 @@ const Header = () => {
 
   return (
     <header>
-      <Auth setshowNavigation={setshowNavigation}/>
+      <Auth setshowNavigation={setshowNavigation} />
       <div
-        className={`container ${
-          conditionReducer ? 'header_containerBlock' : 'header_containerNone'
-        }`}
+        className='container header_container'
       >
-        <div className="wrapper_logo_search">
+        <div className={loginCondition ? 'wrapper_logo_searchBlock' : 'wrapper_logo_searchNone'}>
           <div className="header_logo">
             <svg className="logo_icon">
               <use xlinkHref={`${IconsSVG}#logo_fox_library`} />
@@ -49,7 +46,7 @@ const Header = () => {
           ></input>
         </div>
 
-        <nav>
+        <nav className={loginCondition ? 'nav_headerBlock' : 'nav_headerNone'}>
           <ul className="nav_list">
             <div className={!showNavigation ? 'nav_logoutBlock' : 'nav_logoutNone'}>
               <li onClick={showLogIn} className="nav_item">

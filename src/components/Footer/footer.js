@@ -1,18 +1,16 @@
 import React from 'react';
 import '../../assets/css/style.css';
 import './footer.css';
-import IconsSVG from '../../assets/img/sprite.svg';
 import { useSelector } from 'react-redux';
+import IconsSVG from '../../assets/img/sprite.svg';
 
 const Footer = () => {
-  const conditionReducer = useSelector((state) => state.isLogin);
+  const isShowContent = useSelector((state) => state.reducerContent.isShow);
 
   return (
     <footer>
       <div
-        className={`container ${
-          conditionReducer ? 'footer_containerBlock' : 'footer_containerNone'
-        }`}
+        className={`container ${isShowContent ? 'footer_containerBlock' : 'footer_containerNone'}`}
       >
         <div className="footer_col">
           <nav>
