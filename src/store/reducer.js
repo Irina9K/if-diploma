@@ -3,6 +3,7 @@ import { logInAction, logOutAction } from './actions';
 
 const defaultState = {
   isLogin: false,
+  showWindowLogIn: false,
 };
 
 const reducer = handleActions(

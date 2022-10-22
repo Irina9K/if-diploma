@@ -64,6 +64,7 @@ nav {
 .nav_logout {
   display:flex;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 .nav_login {
@@ -72,6 +73,7 @@ nav {
   font-size: 16px;
   flex-wrap: wrap;
   align-items: center;
+  cursor: pointer;
 }
 
 .rectangle_user_icon{
