@@ -5,8 +5,6 @@ header {
 }
 
 .header_container {
-  /*max-width: 1230px;*/
-  /*margin: 0 auto;*/
   max-height: 142px;
   display: flex;
   justify-content: space-between;
@@ -14,8 +12,6 @@ header {
   align-items: center;
   position: relative;
 }
-
-
 
 .logo_icon {
   width: 63%;

@@ -9,12 +9,7 @@ import { logOutAction } from '../../store/actions';
 
 const Header = () => {
   const [showNavigation, setshowNavigation] = useState(false);
-
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
-  // const isShowContent = useSelector((state) => state.reducerContent.isShow)
-  // console.log(loginCondition)
-  // console.log(isShowContent)
-
   const dispatch = useDispatch();
 
   function showLogIn() {
@@ -24,9 +19,7 @@ const Header = () => {
   return (
     <header>
       <Auth setshowNavigation={setshowNavigation} />
-      <div
-        className='container header_container'
-      >
+      <div className="container header_container">
         <div className={loginCondition ? 'wrapper_logo_searchBlock' : 'wrapper_logo_searchNone'}>
           <div className="header_logo">
             <svg className="logo_icon">
