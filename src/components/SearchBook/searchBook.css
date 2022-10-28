@@ -1,0 +1,22 @@
+.container_search{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.search_img{
+    width: 200px;
+    height: 299px;
+    padding: 10px;
+}
+
+.search_name, .search_length{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.container_search-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

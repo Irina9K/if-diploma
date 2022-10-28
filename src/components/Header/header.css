@@ -5,7 +5,8 @@ header {
 }
 
 .header_container {
-  max-height: 142px;
+  min-height: 142px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -19,6 +20,10 @@ header {
   margin-right: 20px;
 }
 
+.header_form{
+  width:81%
+}
+
 .search_icon {
   position: absolute;
   top: 36%;
@@ -27,7 +32,7 @@ header {
 }
 
 .input_search {
-  width: 77%;
+  /*width: 77%;*/
   height: 48px;
   border: 2px solid #ff5d4f;
   border-radius: 8px;
@@ -103,7 +108,14 @@ nav {
   height: 36px;
 }
 
-.arrow_icon {
+.arrow_iconTop {
   width: 16px;
   height: 10px;
 }
+
+.arrow_iconBottom {
+  width: 16px;
+  height: 10px;
+ transform: rotate(180deg);
+}
+

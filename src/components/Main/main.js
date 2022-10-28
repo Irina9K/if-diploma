@@ -20,7 +20,7 @@ const Main = () => {
       });
   }, []);
 
-  console.log(arrAllBooks);
+  // console.log(arrAllBooks);
   return (
     <main>
       <div

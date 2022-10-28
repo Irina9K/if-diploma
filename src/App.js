@@ -1,14 +1,21 @@
 import React from 'react';
-import Header from './components/Header/header';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+
 import Main from './components/Main/main';
-import Footer from './components/Footer/footer';
 
 const App = () => (
-  <div>
-    <Header />
-    <Main />
-    <Footer />
-  </div>
+  <Layout>
+    <>
+      <Main />
+    </>
+  </Layout>
+
+  // <div>
+  //   <Header />
+  //   <Main />
+  //   <Footer />
+  // </div>
 );
 
 export default App;

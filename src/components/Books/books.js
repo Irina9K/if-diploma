@@ -4,14 +4,15 @@ import '../../assets/css/button.css';
 import './books.css';
 import '../../assets/css/style.css';
 
+import { useSelector } from 'react-redux';
 import Book from '../Book/book';
 
 const Books = ({ arrAllBooks }) => {
   const [showMore, setShowMore] = useState(false);
-  // const  allBooks  = arrAllBooks;
+  const isShowContent = useSelector((state) => state.reducerContent.isShow);
 
   return (
-    <div className="all_books">
+    <div className={isShowContent ? 'all_booksBlock' : 'all_booksNone'}>
       <h2>All books</h2>
       <div className="book_list">
         {showMore ?
@@ -25,7 +26,7 @@ const Books = ({ arrAllBooks }) => {
             ))}
       </div>
       <button className="btn btn_more" onClick={() => setShowMore(!showMore)}>
-          {showMore ? 'Show less' : 'Show more'}
+        {showMore ? 'Show less' : 'Show more'}
       </button>
     </div>
   );

@@ -14,8 +14,6 @@ const Auth = ({ setshowNavigation }) => {
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
   const dispatch = useDispatch();
 
-  console.log(loginCondition);
-
   function clickLoginForm() {
     if (userName && password) {
       users.forEach((item) => {
