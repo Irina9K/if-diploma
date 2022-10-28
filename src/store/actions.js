@@ -1,22 +1,23 @@
 import { createAction } from 'redux-actions';
 
-const logInAction = createAction('LOG_IN', (isAuth = true) => {
-  console.log(isAuth);
-  return {
-    isAuth,
-  };
-});
-
-const logOutAction = createAction('LOG_OUT', (isAuth = false) => ({
+const logInAction = createAction('LOG_IN', (isAuth = true, isShow = false) => ({
   isAuth,
+  isShow,
 }));
 
-// const showLogInActions = createAction('SHOW_LOGIN', (isWindowlogIn = true) => ({
-//   isWindowlogIn,
-// }));
-//
-// const dontShowLogInActions = createAction('SHOW_LOGIN', (isWindowlogIn = false) => ({
-//   isWindowlogIn,
-// }));
+const logOutAction = createAction('LOG_OUT', (isAuth = false, isShow = true) => ({
+  isAuth,
+  isShow,
+}));
 
-export { logInAction, logOutAction };
+const showContent = createAction('SHOW_LOGIN', (isShow = true) => ({
+  isShow,
+}));
+
+const dontShowContent = createAction('SHOW_LOGIN', (isShow = false) => ({
+  isShow,
+}));
+
+export {
+  logInAction, logOutAction, showContent, dontShowContent,
+};

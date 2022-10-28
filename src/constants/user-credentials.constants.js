@@ -6,8 +6,8 @@ const users = [
   },
   {
     id: 2,
-    userName: 'Alex',
-    password: '2',
+    userName: '1',
+    password: '1',
   },
 ];
 

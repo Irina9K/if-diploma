@@ -6,12 +6,12 @@ import './auth.css';
 import IconsSVG from '../../assets/img/sprite.svg';
 import '../../assets/css/button.css';
 import { users } from '../../constants/user-credentials.constants';
-import { logInAction } from '../../store/actions';
+import { logInAction, showContent } from '../../store/actions';
 
-const Auth = ({setshowNavigation}) => {
+const Auth = ({ setshowNavigation }) => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
-  const conditionReducer = useSelector((state) => state.isLogin);
+  const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
   const dispatch = useDispatch();
 
   function clickLoginForm() {
@@ -19,10 +19,11 @@ const Auth = ({setshowNavigation}) => {
       users.forEach((item) => {
         if (item.userName === userName.toString() && item.password === password.toString()) {
           dispatch(logInAction());
+          dispatch(showContent());
         }
       });
     }
-    setshowNavigation(true)
+    setshowNavigation(true);
   }
 
   function checkUserName(e) {
@@ -36,7 +37,7 @@ const Auth = ({setshowNavigation}) => {
   }
 
   return (
-    <div className={conditionReducer ? 'container_backgroundNone' : 'container_backgroundBlock'}>
+    <div className={loginCondition ? 'container_backgroundNone' : 'container_backgroundBlock'}>
       <div className="container_sign">
         <div className="title__sign">Welcome to Fox Library</div>
         <form className="wrapper__input--value">
