@@ -1,0 +1,32 @@
+.wrapper_orders{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ min-height: 924px ;
+    /*width:1230px*/
+}
+
+.order_wait, .order_list{
+    position: relative;
+    max-width: 1230px;
+    min-height: 400px;
+    background-color:#FFFFFF;
+    border-radius: 16px;
+}
+
+.order_name{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 26px 32px;
+}
+
+.order_empty{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50% -50%);
+    font-weight: 600;
+    font-size: 24px;
+    color: #B5B5B5;
+}

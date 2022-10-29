@@ -1,15 +1,22 @@
 import React from 'react';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
-
-import Main from './components/Main/main';
+import MainPage from './components/Main/MainPage/mainPage';
+import Books from './components/Main/Books/books';
+import Orders from './components/Main/Orders/orders';
+import SettingsAccount from './components/Settings/settingsAccount';
 
 const App = () => (
-  <Layout>
-    <>
-      <Main />
-    </>
-  </Layout>
+  <BrowserRouter>
+    <Layout>
+      <Routes>
+        <Route path={'/'} element={<MainPage />} />
+        <Route path={'/books'} element={<Books />} />
+        <Route path={'/orders'} element={<Orders />} />
+          <Route path={'/settings'} element={<SettingsAccount />} />
+      </Routes>
+    </Layout>
+  </BrowserRouter>
 
   // <div>
   //   <Header />
