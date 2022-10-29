@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchBooks } from '../../store/reducerBooks';
 
 import IconsSVG from '../../assets/img/sprite.svg';
@@ -7,7 +8,7 @@ import './header.css';
 import '../../assets/css/style.css';
 import Auth from '../Auth/auth';
 import { logOutAction } from '../../store/actions';
-import Settings from '../Settings/settings';
+import SettingsMenu from '../Settings/SettingsMenu/settingsMenu';
 import SearchBook from '../SearchBook/searchBook';
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
   const dispatch = useDispatch();
   const books = useSelector((state) => state.booksReducer.books);
-  console.log(books);
+  // console.log(books);
 
   useEffect(() => {
     fetchBooks();
@@ -44,8 +45,6 @@ const Header = () => {
       book.author.toLowerCase().includes(inputValue.toLowerCase()),
   );
 
-  console.log(filterBooks);
-
   function showLogIn() {
     dispatch(logOutAction());
   }
@@ -59,11 +58,13 @@ const Header = () => {
       <Auth setshowNavigation={setshowNavigation} />
       <div className="container header_container">
         <div className={loginCondition ? 'wrapper_logo_searchBlock' : 'wrapper_logo_searchNone'}>
+          <Link to={'/'}>
           <div className="header_logo">
             <svg className="logo_icon">
               <use xlinkHref={`${IconsSVG}#logo_fox_library`} />
             </svg>
           </div>
+          </Link>
 
           <svg className="search_icon">
             <use xlinkHref={`${IconsSVG}#search`} />
@@ -90,11 +91,15 @@ const Header = () => {
             </div>
 
             <div className={showNavigation ? 'nav_loginBlock' : 'nav_loginNone'}>
-              <li className="nav_item">All books</li>
-              <li className="nav_item">Your orders</li>
+              <li className="nav_item">
+                <Link to={'books'}>All books</Link>
+              </li>
+              <li className="nav_item">
+                <Link to={'orders'}>Your orders</Link>
+              </li>
               <li onClick={showSettings}>
                 <svg className="rectangle_user_icon">
-                  <use xlinkHref={`${IconsSVG}#rectangle_user`} />
+                  <use xlinkHref={`${IconsSVG}#user`} />
                 </svg>
               </li>
               <li>
@@ -106,8 +111,8 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <Settings showSettingsMenu={showSettingsMenu} setShowSettingsMenu={setShowSettingsMenu} />
-      <SearchBook filterBooks={filterBooks} />
+      <SettingsMenu showSettingsMenu={showSettingsMenu} setShowSettingsMenu={setShowSettingsMenu} />
+      <SearchBook filterBooks={filterBooks} bookId={filterBooks.id} />
 
       {/* <div> */}
       {/*  <button onClick={() => dispatch(fetchBooks())}>get hotels</button> */}

@@ -1,11 +1,12 @@
 import React from 'react';
 
-import '../../assets/css/style.css';
-import './settings.css';
+import '../../../assets/css/style.css';
+import './settingsMenu.css';
 import { useDispatch } from 'react-redux';
-import { logOutAction } from '../../store/actions';
+import { Link } from 'react-router-dom';
+import { logOutAction } from '../../../store/actions';
 
-const Settings = ({ showSettingsMenu, setShowSettingsMenu }) => {
+const SettingsMenu = ({ showSettingsMenu, setShowSettingsMenu }) => {
   const dispatch = useDispatch();
 
   function logOut() {
@@ -16,18 +17,25 @@ const Settings = ({ showSettingsMenu, setShowSettingsMenu }) => {
     <div className={showSettingsMenu ? 'wrapper_settingsBlock' : 'wrapper_settingsNone'}>
       <div className="settings_menu">
         <p className="settings_user-name">Irina</p>
-        <p className="settings_item">Settings</p>
+        <p className="settings_item">
+            <Link to={'settings'}>Settings</Link>
+
+        </p>
         <hr />
-        <p className="settings_item">My Orders</p>
+        <p className="settings_item">
+            <Link to={'orders'}>My Orders</Link>
+
+        </p>
       </div>
 
       <div className="wrapper_logout">
         <p onClick={logOut} className="logout">
-          Log out
+            <Link to={'/'}>Log out</Link>
+
         </p>
       </div>
     </div>
   );
 };
 
-export default Settings;
+export default SettingsMenu;

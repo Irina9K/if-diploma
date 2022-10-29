@@ -1,15 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import '../../assets/css/button.css';
+import '../../../assets/css/button.css';
 import './books.css';
-import '../../assets/css/style.css';
+import '../../../assets/css/style.css';
 
 import { useSelector } from 'react-redux';
-import Book from '../Book/book';
 
-const Books = ({ arrAllBooks }) => {
+import Book from '../../Book/book';
+import { API_URL } from '../../../constants/api.constants';
+
+const Books = () => {
   const [showMore, setShowMore] = useState(false);
   const isShowContent = useSelector((state) => state.reducerContent.isShow);
+
+  const [arrAllBooks, setArrAllBooks] = useState([]);
+
+  // useEffect(() => {
+  //     fetchBooks();
+  // }, []);
+
+  useEffect(() => {
+    fetch(`${API_URL}`)
+      .then((response) => response.json())
+      .then((result) => {
+        setArrAllBooks(result);
+      });
+  }, []);
 
   return (
     <div className={isShowContent ? 'all_booksBlock' : 'all_booksNone'}>

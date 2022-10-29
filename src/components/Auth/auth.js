@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import '../../assets/css/style.css';
 import './auth.css';
@@ -76,7 +77,8 @@ const Auth = ({ setshowNavigation }) => {
 
             <input onChange={(e) => checkPassword(e)} className="input__password"></input>
             <button onClick={clickLoginForm} className="btn btn__sign--up" type="reset">
-              Log in
+              <Link to={'books'}>Log in</Link>
+
             </button>
             <svg className="close_icon">
               <use xlinkHref={`${IconsSVG}#close`} />
