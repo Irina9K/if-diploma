@@ -19,11 +19,9 @@ const Auth = ({ setshowNavigation }) => {
   return (
     <div className={loginCondition ? 'container_backgroundNone' : 'container_backgroundBlock'}>
       <div className="container_sign">
-        <div className="title__sign">
-          Log In to Fox Library
-        </div>
+        <div className="title__sign">Log In to Fox Library</div>
         <form className="wrapper__input--value">
-          <SignUp/>
+          <SignUp />
           <LogIn setshowNavigation={setshowNavigation} />
         </form>
       </div>

@@ -1,5 +1,10 @@
 import { combineActions, handleActions } from 'redux-actions';
-import { dontShowContent, dontSignUpAction, logInAction, logOutAction, showContent, signUpAction } from './actions';
+import { dontShowContent,
+  dontSignUpAction,
+  logInAction,
+  logOutAction,
+  showContent,
+  signUpAction } from './actions';
 
 // const defaultState = {
 //   isLogin: true,
