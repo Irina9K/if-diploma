@@ -9,9 +9,10 @@ import '../../assets/css/button.css';
 import { users } from '../../constants/user-credentials.constants';
 import { logInAction, showContent } from '../../store/actions';
 
-const Auth = ({ setshowNavigation }) => {
+const Auth = ({ setshowNavigation, setOpenWindow, openWindow }) => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
+
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
   const dispatch = useDispatch();
 
@@ -35,6 +36,11 @@ const Auth = ({ setshowNavigation }) => {
   function checkPassword(e) {
     e.preventDefault();
     setPassword(e.target.value);
+  }
+
+  function closeWindowAuth() {
+    setOpenWindow(!openWindow);
+    setshowNavigation(true);
   }
 
   return (
@@ -78,11 +84,12 @@ const Auth = ({ setshowNavigation }) => {
             <input onChange={(e) => checkPassword(e)} className="input__password"></input>
             <button onClick={clickLoginForm} className="btn btn__sign--up" type="reset">
               <Link to={'books'}>Log in</Link>
-
             </button>
-            <svg className="close_icon">
-              <use xlinkHref={`${IconsSVG}#close`} />
-            </svg>
+            <div onClick={closeWindowAuth} className="wrapper-close-icon">
+              <svg className="close_icon">
+                <use xlinkHref={`${IconsSVG}#close`} />
+              </svg>
+            </div>
           </div>
         </form>
       </div>

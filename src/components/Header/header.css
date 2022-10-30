@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  position: relative;
+  /*position: relative;*/
   color: #616161;
 }
 
@@ -26,20 +26,31 @@ header {
 
 .search_icon {
   position: absolute;
-  top: 36%;
-  right: 62%;
+  top: 38%;
+  right: 72%;
   height: 18px;
+  width: 18px;
 }
 
 .input_search {
+  outline:none;
   /*width: 77%;*/
   height: 48px;
-  border: 2px solid #ff5d4f;
+  border: 2px solid #B5B5B5;
   border-radius: 8px;
 }
 
-.input_search::placeholder {
+.input_search:focus{
+  border: 2px solid #FF5D4F;
+}
+
+input[type='search']{
   padding-left: 50px;
+  font-size: 18px;
+}
+
+.input_search::placeholder {
+  padding-left: 15px;
   color: #b5b5b5;
   font-size: 16px;
 }
@@ -70,6 +81,10 @@ nav {
 
 .nav_list {
   list-style-type: none;
+}
+
+.nav_item a{
+  color: #000000;
 }
 
 .nav_logoutBlock .nav_item:nth-child(2) {
@@ -118,4 +133,9 @@ nav {
   height: 10px;
  transform: rotate(180deg);
 }
+
+a.active{
+  color: #FF5D4F;
+}
+
 

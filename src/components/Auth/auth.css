@@ -37,6 +37,7 @@
 }
 
 .title__sign {
+  position: relative;
   font-size: 24px;
   font-weight: 700;
   align-items: center;
@@ -67,13 +68,32 @@ input {
   border-radius: 8px;
 }
 
+.login input, .signupBlock input{
+  padding-left: 20px;
+  font-size: 18px
+}
+
+/*.wrapper__input--value .login .input_username:focus,*/
+/*.input_birthdate:focus,*/
+/*.input_email:focus,*/
+/*.input__password:focus,*/
+/*.input__password:focus{*/
+/*  border: 2px solid #FF5D4F;*/
+/*}*/
+
 .input__email {
   margin-bottom: 30px;
 }
 
+
+
 .close_icon {
   position: absolute;
   width: 16px;
-  bottom: 82%;
-  right: 5%;
+  bottom: 75%;
+  right: 39%;
+}
+
+.btn__sign--up a{
+  color:#FFFFFF;
 }

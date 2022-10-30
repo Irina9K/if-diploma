@@ -20,8 +20,6 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(booksWatcher);
 
-console.log(store.getState());
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

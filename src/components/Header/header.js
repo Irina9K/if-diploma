@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { fetchBooks } from '../../store/reducerBooks';
 
 import IconsSVG from '../../assets/img/sprite.svg';
@@ -14,36 +14,49 @@ import SearchBook from '../SearchBook/searchBook';
 const Header = () => {
   const [showNavigation, setshowNavigation] = useState(false);
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  // const [booksSearch, setBookSearch] = useState([]);
+  const [booksSearch, setBookSearch] = useState([]);
 
+  // const [display, setDisplay] = useState('none');
+  // const [displayError, setDisplayError] = useState('none');
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
+  const isShowContent = useSelector((state) => state.reducerContent.isShow);
   const dispatch = useDispatch();
   const books = useSelector((state) => state.booksReducer.books);
-  // console.log(books);
 
-  useEffect(() => {
-    fetchBooks();
-  }, []);
+  console.log(showNavigation);
+  console.log(loginCondition);
 
-  // function handleChange(e) {
-  //   e.preventDefault();
-  //   const searchString = e.target.value.trim().toLowerCase();
-  //   console.log(searchString);
-  //
-  //   const searchBook = books.filter(
-  //     (item) =>
-  //       item.name.trim().toLowerCase().includes(searchString) ||
-  //       item.author.trim().toLowerCase().includes(searchString),
-  //   );
-  //   console.log(searchBook);
-  //   setArrBooksSearch(searchBook);
-  // }
+  // useEffect(() => {
+  //   fetchBooks();
+  //   console.log('hi')
+  // }, []);
 
-  const filterBooks = books.filter(
-    (book) => book.name.toLowerCase().includes(inputValue.toLowerCase()) ||
-      book.author.toLowerCase().includes(inputValue.toLowerCase()),
-  );
+  function showSearchResult(e) {
+    e.preventDefault();
+    const inputValue = e.target.value.trim().toLowerCase();
+
+    if (!isShowContent) {
+      alert('Please login to your profile or register.');
+      return;
+    }
+
+    if (inputValue.length === 0) {
+      // setDisplayError('block');
+      // setDisplay('none');
+      return;
+    }
+
+    dispatch(fetchBooks());
+
+    const filterBooks = books.filter(
+      (book) => book.name.toLowerCase().includes(inputValue.toLowerCase()) ||
+        book.author.toLowerCase().includes(inputValue.toLowerCase()),
+    );
+
+    setBookSearch(filterBooks);
+    // setDisplayError('none');
+    // setDisplay('block');
+  }
 
   function showLogIn() {
     dispatch(logOutAction());
@@ -57,31 +70,32 @@ const Header = () => {
     <header>
       <Auth setshowNavigation={setshowNavigation} />
       <div className="container header_container">
-        <div className={loginCondition ? 'wrapper_logo_searchBlock' : 'wrapper_logo_searchNone'}>
+        <div className={(loginCondition) ? 'wrapper_logo_searchBlock' : 'wrapper_logo_searchNone'}>
           <Link to={'/'}>
-          <div className="header_logo">
-            <svg className="logo_icon">
-              <use xlinkHref={`${IconsSVG}#logo_fox_library`} />
-            </svg>
-          </div>
+            <div className="header_logo">
+              <svg className="logo_icon">
+                <use xlinkHref={`${IconsSVG}#logo_fox_library`} />
+              </svg>
+            </div>
           </Link>
 
           <svg className="search_icon">
             <use xlinkHref={`${IconsSVG}#search`} />
           </svg>
-          <form onBlur={() => dispatch(fetchBooks())} className="header_form">
+          <form /* onBlur={() => dispatch(fetchBooks())} */ className="header_form">
             <input
               // value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              onChange={showSearchResult}
               className="input_search"
               type="search"
               name="search"
               placeholder="Search by author, title, name"
+              required
             ></input>
           </form>
         </div>
 
-        <nav className={loginCondition ? 'nav_headerBlock' : 'nav_headerNone'}>
+        <nav className= 'nav_headerBlock'>
           <ul className="nav_list">
             <div className={!showNavigation ? 'nav_logoutBlock' : 'nav_logoutNone'}>
               <li onClick={showLogIn} className="nav_item">
@@ -92,10 +106,12 @@ const Header = () => {
 
             <div className={showNavigation ? 'nav_loginBlock' : 'nav_loginNone'}>
               <li className="nav_item">
-                <Link to={'books'}>All books</Link>
+                <NavLink to={'books'} className={({ isActive }) => isActive && 'active'}>
+                  All books
+                </NavLink>
               </li>
               <li className="nav_item">
-                <Link to={'orders'}>Your orders</Link>
+                <NavLink to={'orders'}>Your orders</NavLink>
               </li>
               <li onClick={showSettings}>
                 <svg className="rectangle_user_icon">
@@ -112,16 +128,7 @@ const Header = () => {
         </nav>
       </div>
       <SettingsMenu showSettingsMenu={showSettingsMenu} setShowSettingsMenu={setShowSettingsMenu} />
-      <SearchBook filterBooks={filterBooks} bookId={filterBooks.id} />
-
-      {/* <div> */}
-      {/*  <button onClick={() => dispatch(fetchBooks())}>get hotels</button> */}
-      {/*  /!*<div>*!/ */}
-      {/*  /!*  {filterBooks.map((item) => (*!/ */}
-      {/*  /!*    <div> {item.name}</div>*!/ */}
-      {/*  /!*  ))}*!/ */}
-      {/*  /!*</div>*!/ */}
-      {/* </div> */}
+      <SearchBook booksSearch={booksSearch} bookId={booksSearch.id} />
     </header>
   );
 };

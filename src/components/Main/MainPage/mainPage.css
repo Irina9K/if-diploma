@@ -42,4 +42,9 @@ h1 {
     width: 185px;
     font-size: 20px;
     margin-top: 0;
+    color: #FFFFFF;
+}
+
+.main_btn a{
+    color: #FFFFFF;
 }

@@ -1,6 +1,8 @@
 .container_search{
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-bottom: 30px;
 }
 
@@ -13,6 +15,10 @@
 .search_name, .search_length{
     font-weight: 600;
     font-size: 14px;
+}
+
+.search_name a{
+    color: #000000;
 }
 
 .container_search-content{
