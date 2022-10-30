@@ -99,7 +99,9 @@ const Header = () => {
               <li onClick={showLogIn} className="nav_item">
                 Log In
               </li>
-              <li onClick={showLogOut} className="nav_item">Sign up</li>
+              <li onClick={showLogOut} className="nav_item">
+                Sign up
+              </li>
             </div>
 
             <div className={showNavigation ? 'nav_loginBlock' : 'nav_loginNone'}>

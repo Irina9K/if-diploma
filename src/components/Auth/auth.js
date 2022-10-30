@@ -28,9 +28,7 @@ const Auth = ({ setshowNavigation }) => {
     setshowNavigation(true);
   }
 
-  function clickSignUpForm() {
-
-  }
+  function clickSignUpForm() {}
 
   function checkUserName(e) {
     e.preventDefault();
