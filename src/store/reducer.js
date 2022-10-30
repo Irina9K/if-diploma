@@ -1,5 +1,5 @@
 import { combineActions, handleActions } from 'redux-actions';
-import { dontShowContent, logInAction, logOutAction, showContent } from './actions';
+import { dontShowContent, dontSignUpAction, logInAction, logOutAction, showContent, signUpAction } from './actions';
 
 // const defaultState = {
 //   isLogin: true,
@@ -33,4 +33,18 @@ const reducerContent = handleActions(
   },
 );
 
-export { reducerLogIn, reducerContent };
+const reducerSignUp = handleActions(
+  {
+    [combineActions(signUpAction, dontSignUpAction)]: (state, { payload: { isSignUp } }) => ({
+      ...state,
+      isSignUp,
+    }),
+  },
+  {
+    isSignUp: true,
+  },
+);
+
+export {
+  reducerLogIn, reducerContent, reducerSignUp,
+};

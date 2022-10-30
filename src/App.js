@@ -13,16 +13,11 @@ const App = () => (
         <Route path={'/'} element={<MainPage />} />
         <Route path={'/books'} element={<Books />} />
         <Route path={'/orders'} element={<Orders />} />
-        <Route path={'/settings'} element={<SettingsAccount />} />
+          {/* <Route path={'/search/:details'} element={<BookDetails />} /> */}
+          <Route path={'/settings'} element={<SettingsAccount />} />
       </Routes>
     </Layout>
   </BrowserRouter>
-
-  // <div>
-  //   <Header />
-  //   <Main />
-  //   <Footer />
-  // </div>
 );
 
 export default App;

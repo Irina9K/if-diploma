@@ -11,22 +11,6 @@
   display: none;
 }
 
-.signupNone{
-  display: none;
-}
-
-.signupBlock{
-  display: block;
-}
-
-.loginNone{
-  display: none;
-}
-
-.loginBlock{
-  display: block;
-}
-
 .container_sign {
   margin: 120px auto;
   width: 384px;

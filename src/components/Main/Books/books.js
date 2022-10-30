@@ -15,10 +15,6 @@ const Books = () => {
 
   const [arrAllBooks, setArrAllBooks] = useState([]);
 
-  // useEffect(() => {
-  //     fetchBooks();
-  // }, []);
-
   useEffect(() => {
     fetch(`${API_URL}`)
       .then((response) => response.json())

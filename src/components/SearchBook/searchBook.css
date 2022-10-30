@@ -1,9 +1,13 @@
-.container_search{
+.container_searchBlock{
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     padding-bottom: 30px;
+}
+
+.container_searchNone{
+    display: none;
 }
 
 .search_img{
