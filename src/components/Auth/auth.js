@@ -9,14 +9,14 @@ import '../../assets/css/button.css';
 import { users } from '../../constants/user-credentials.constants';
 import { logInAction, showContent } from '../../store/actions';
 
-const Auth = ({ setshowNavigation, setOpenWindow, openWindow }) => {
+const Auth = ({ setshowNavigation }) => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
 
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
   const dispatch = useDispatch();
 
-  function clickLoginForm() {
+  function clickLogInForm() {
     if (userName && password) {
       users.forEach((item) => {
         if (item.userName === userName.toString() && item.password === password.toString()) {
@@ -26,6 +26,10 @@ const Auth = ({ setshowNavigation, setOpenWindow, openWindow }) => {
       });
     }
     setshowNavigation(true);
+  }
+
+  function clickSignUpForm() {
+
   }
 
   function checkUserName(e) {
@@ -38,10 +42,10 @@ const Auth = ({ setshowNavigation, setOpenWindow, openWindow }) => {
     setPassword(e.target.value);
   }
 
-  function closeWindowAuth() {
-    setOpenWindow(!openWindow);
-    setshowNavigation(true);
-  }
+  // function closeWindowAuth() {
+  //   setOpenWindow(!openWindow);
+  //   setshowNavigation(true);
+  // }
 
   return (
     <div className={loginCondition ? 'container_backgroundNone' : 'container_backgroundBlock'}>
@@ -64,7 +68,7 @@ const Auth = ({ setshowNavigation, setOpenWindow, openWindow }) => {
             <input className="input_email" name="email" id="email" type="email"></input>
             <label className="label__password">Password</label>
             <input className="input__password"></input>
-            <button className="btn btn__sign--up" type="reset">
+            <button onClick={clickSignUpForm} className="btn btn__sign--up" type="reset">
               Sign up
             </button>
             <svg className="close_icon">
@@ -82,10 +86,10 @@ const Auth = ({ setshowNavigation, setOpenWindow, openWindow }) => {
             ></input>
 
             <input onChange={(e) => checkPassword(e)} className="input__password"></input>
-            <button onClick={clickLoginForm} className="btn btn__sign--up" type="reset">
+            <button onClick={clickLogInForm} className="btn btn__sign--up" type="reset">
               <Link to={'books'}>Log in</Link>
             </button>
-            <div onClick={closeWindowAuth} className="wrapper-close-icon">
+            <div /* onClick={closeWindowAuth} */ className="wrapper-close-icon">
               <svg className="close_icon">
                 <use xlinkHref={`${IconsSVG}#close`} />
               </svg>

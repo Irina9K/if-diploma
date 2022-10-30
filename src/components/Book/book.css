@@ -91,3 +91,8 @@
     height: 32px;
     font-size: 12px;
 }
+
+.btn_order:hover{
+    background-color: #FF5D4F;
+
+}

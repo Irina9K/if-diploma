@@ -27,8 +27,11 @@ const MainPage = () => {
           Over 400.000 books from fiction to the business literature
         </div>
         <button onClick={clickButtonStart} className="btn main_btn">
-            {isShowContent ? <Link to={'books'}> Let’s start</Link> : <Link to={'/'}> Let’s start</Link>}
-
+          {isShowContent ? (
+            <Link to={'books'}> Let’s start</Link>
+          ) : (
+            <Link to={'/'}> Let’s start</Link>
+          )}
         </button>
       </div>
     </div>

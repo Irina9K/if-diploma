@@ -15,7 +15,6 @@ const Header = () => {
   const [showNavigation, setshowNavigation] = useState(false);
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
   const [booksSearch, setBookSearch] = useState([]);
-
   // const [display, setDisplay] = useState('none');
   // const [displayError, setDisplayError] = useState('none');
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
@@ -25,11 +24,6 @@ const Header = () => {
 
   console.log(showNavigation);
   console.log(loginCondition);
-
-  // useEffect(() => {
-  //   fetchBooks();
-  //   console.log('hi')
-  // }, []);
 
   function showSearchResult(e) {
     e.preventDefault();
@@ -62,6 +56,10 @@ const Header = () => {
     dispatch(logOutAction());
   }
 
+  function showLogOut() {
+    dispatch(logOutAction());
+  }
+
   function showSettings() {
     setShowSettingsMenu(!showSettingsMenu);
   }
@@ -70,7 +68,7 @@ const Header = () => {
     <header>
       <Auth setshowNavigation={setshowNavigation} />
       <div className="container header_container">
-        <div className={(loginCondition) ? 'wrapper_logo_searchBlock' : 'wrapper_logo_searchNone'}>
+        <div className={loginCondition ? 'wrapper_logo_searchBlock' : 'wrapper_logo_searchNone'}>
           <Link to={'/'}>
             <div className="header_logo">
               <svg className="logo_icon">
@@ -95,13 +93,13 @@ const Header = () => {
           </form>
         </div>
 
-        <nav className= 'nav_headerBlock'>
+        <nav className={loginCondition ? 'nav_headerBlock' : 'nav_headerNone'}>
           <ul className="nav_list">
             <div className={!showNavigation ? 'nav_logoutBlock' : 'nav_logoutNone'}>
               <li onClick={showLogIn} className="nav_item">
                 Log In
               </li>
-              <li className="nav_item">Sign up</li>
+              <li onClick={showLogOut} className="nav_item">Sign up</li>
             </div>
 
             <div className={showNavigation ? 'nav_loginBlock' : 'nav_loginNone'}>
