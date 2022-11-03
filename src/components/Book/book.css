@@ -56,22 +56,7 @@
     padding-bottom: 10px;
 }
 
-.star {
-    width: 122px;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 8px;
-}
 
-.star_dark_icon {
-    width: 19px;
-    height: 19px;
-    padding-right: 6px;
-}
-
-.star_dark_icon:nth-last-child {
-    padding-right: 0;
-}
 
 /*.star span {*/
 /*  font-size: 26px;*/

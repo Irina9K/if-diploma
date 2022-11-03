@@ -5,7 +5,7 @@ import IconsSVG from '../../../assets/img/sprite.svg';
 import { fetchBooks } from '../../../store/reducerBooks';
 import './logoSearch.css';
 
-const LogoSearch = ({ setBookSearch }) => {
+const LogoSearch = ({ setBookSearch, setBookId }) => {
   const books = useSelector((state) => state.booksReducer.books);
   const isShowContent = useSelector((state) => state.reducerContent.isShow);
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
@@ -33,7 +33,7 @@ const LogoSearch = ({ setBookSearch }) => {
       (book) => book.name.toLowerCase().includes(inputValue.toLowerCase()) ||
         book.author.toLowerCase().includes(inputValue.toLowerCase()),
     );
-
+    setBookId(filterBooks[0].id);
     setBookSearch(filterBooks);
     // setDisplayError('none');
     // setDisplay('block');

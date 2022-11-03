@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import IconsSVG from '../../../assets/img/sprite.svg';
 import { users } from '../../../constants/user-credentials.constants';
 import { logInAction, showContent } from '../../../store/actions';
@@ -8,8 +8,9 @@ import { logInAction, showContent } from '../../../store/actions';
 const LogIn = ({ setshowNavigation }) => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
-
   const dispatch = useDispatch();
+  const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
+  // const isSignUp = useSelector((state) => state.reducerSignUp.isSignUp);
 
   function clickLogInForm() {
     if (userName && password) {
@@ -34,7 +35,7 @@ const LogIn = ({ setshowNavigation }) => {
   }
 
   return (
-    <div className="login">
+    <div className={loginCondition ? 'loginNone' : 'loginBlock'}>
       <label className="label_username">Username</label>
       <input
         onChange={(e) => checkUserName(e)}

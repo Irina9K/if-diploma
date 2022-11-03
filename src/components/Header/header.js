@@ -12,6 +12,7 @@ const Header = () => {
   const [showNavigation, setshowNavigation] = useState(false);
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
   const [booksSearch, setBookSearch] = useState([]);
+  const [bookId, setBookId] = useState([]);
   // const [display, setDisplay] = useState('none');
   // const [displayError, setDisplayError] = useState('none');
 
@@ -19,7 +20,7 @@ const Header = () => {
     <header>
       <Auth setshowNavigation={setshowNavigation} />
       <div className="container header_container">
-        <LogoSearch setBookSearch={setBookSearch} />
+        <LogoSearch setBookSearch={setBookSearch} setBookId={setBookId}/>
         <NavMenu
           showNavigation={showNavigation}
           showSettingsMenu={showSettingsMenu}
@@ -27,7 +28,7 @@ const Header = () => {
         />
       </div>
       <SettingsMenu showSettingsMenu={showSettingsMenu} setShowSettingsMenu={setShowSettingsMenu} />
-      <SearchBook booksSearch={booksSearch} />
+      <SearchBook booksSearch={booksSearch} bookId={bookId}/>
     </header>
   );
 };

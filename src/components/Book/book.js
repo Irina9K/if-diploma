@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import IconsSVG from '../../assets/img/sprite.svg';
+import { Link } from 'react-router-dom';
 import '../../assets/css/button.css';
 import './book.css';
 import '../../assets/css/style.css';
+import Rating from '../Rating/rating';
 
-const Book = ({ key, name, imageUrl }) => {
+const Book = ({ key, name, imageUrl, bookId }) => {
   const [conditionsBook, setconditionsBook] = useState('true');
 
   function changeConditionsBook() {
@@ -19,26 +20,11 @@ const Book = ({ key, name, imageUrl }) => {
 
       <figcaption className="book_status">
         <p className="status_available">{conditionsBook ? 'Available' : 'Taken'}</p>
-        {/* <p className='status_taken'>Taken</p> */}
-        <p className="book_name">{name.split(':', 1)}</p>
+        <p className="book_name">
+          <Link to={`/books/${bookId}`}> {name.split(':', 1)}</Link>
+        </p>
         <p className="who_order">Irina</p>
-        <div className="star">
-          <svg className="star_dark_icon">
-            <use xlinkHref={`${IconsSVG}#star_dark`} />
-          </svg>
-          <svg className="star_dark_icon">
-            <use xlinkHref={`${IconsSVG}#star_dark`} />
-          </svg>
-          <svg className="star_dark_icon">
-            <use xlinkHref={`${IconsSVG}#star_dark`} />
-          </svg>
-          <svg className="star_dark_icon">
-            <use xlinkHref={`${IconsSVG}#star_dark`} />
-          </svg>
-          <svg className="star_dark_icon">
-            <use xlinkHref={`${IconsSVG}#star_dark`} />
-          </svg>
-        </div>
+        <Rating/>
 
         <button onClick={changeConditionsBook} className="btn btn_order">
           Order

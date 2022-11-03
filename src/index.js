@@ -8,6 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 // import storage from 'redux-persist/lib/storage';
 import App from './App';
 import { reducerContent, reducerLogIn, reducerSignUp } from './store/reducer';
+import apiReducer from './store/apiReducer';
 import booksReducer from './store/reducerBooks';
 import { booksWatcher } from './components/saga/saga';
 
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   reducerContent,
   reducerSignUp,
   booksReducer,
+  apiReducer,
 });
 
 // const persistedStore = persistReducer(persistConfig, rootReducer);
@@ -30,6 +32,8 @@ const rootReducer = combineReducers({
 const store = createStore(/* persistedStore */ rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(booksWatcher);
 // const persistor = persistStore(store);
+
+console.log(store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

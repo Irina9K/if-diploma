@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import IconsSVG from '../../../assets/img/sprite.svg';
-import { logOutAction } from '../../../store/actions';
+import { dontSignUpAction, logOutAction } from '../../../store/actions';
 import './navMenu.css';
 
 const NavMenu = ({ showNavigation, setShowSettingsMenu, showSettingsMenu }) => {
@@ -15,8 +15,8 @@ const NavMenu = ({ showNavigation, setShowSettingsMenu, showSettingsMenu }) => {
     dispatch(logOutAction());
   }
 
-  function showLogOut() {
-    dispatch(logOutAction());
+  function showSignUp() {
+    dispatch(dontSignUpAction());
   }
 
   function showSettings() {
@@ -30,7 +30,7 @@ const NavMenu = ({ showNavigation, setShowSettingsMenu, showSettingsMenu }) => {
           <li onClick={showLogIn} className="nav_item">
             Log In
           </li>
-          <li onClick={showLogOut} className="nav_item">
+          <li onClick={showSignUp} className="nav_item">
             Sign up
           </li>
         </div>
