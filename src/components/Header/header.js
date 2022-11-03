@@ -20,7 +20,7 @@ const Header = () => {
     <header>
       <Auth setshowNavigation={setshowNavigation} />
       <div className="container header_container">
-        <LogoSearch setBookSearch={setBookSearch} setBookId={setBookId}/>
+        <LogoSearch setBookSearch={setBookSearch} setBookId={setBookId} />
         <NavMenu
           showNavigation={showNavigation}
           showSettingsMenu={showSettingsMenu}
@@ -28,7 +28,7 @@ const Header = () => {
         />
       </div>
       <SettingsMenu showSettingsMenu={showSettingsMenu} setShowSettingsMenu={setShowSettingsMenu} />
-      <SearchBook booksSearch={booksSearch} bookId={bookId}/>
+      <SearchBook booksSearch={booksSearch} bookId={bookId} />
     </header>
   );
 };

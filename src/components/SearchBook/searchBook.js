@@ -17,10 +17,9 @@ const SearchBook = ({ booksSearch, bookId }) => {
           <figcaption className="search_name">
             <Link to={`/books/${bookId}`}>{book.author}</Link>
           </figcaption>
-            <figcaption className="search_length">{book.name.split(':', 1)}</figcaption>
+          <figcaption className="search_length">{book.name.split(':', 1)}</figcaption>
         </figure>
       ))}
-
     </div>
   );
 };
