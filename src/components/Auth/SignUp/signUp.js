@@ -17,7 +17,7 @@ const SignUp = ({ setInfForlogIn }) => {
   }
 
   return (
-    <div className={(isSignUp) ? 'signupNone' : 'signupBlock'}>
+    <div className={isSignUp ? 'signupNone' : 'signupBlock'}>
       <label className="label_username">Username</label>
       <input className="input_username" name="username" id="username" type="text"></input>
       <label className="label__birthdate">Your birthdate</label>

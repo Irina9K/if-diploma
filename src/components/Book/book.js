@@ -24,7 +24,7 @@ const Book = ({ key, name, imageUrl, bookId }) => {
           <Link to={`/books/${bookId}`}> {name.split(':', 1)}</Link>
         </p>
         <p className="who_order">Irina</p>
-        <Rating/>
+        <Rating />
 
         <button onClick={changeConditionsBook} className="btn btn_order">
           Order
