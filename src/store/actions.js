@@ -1,4 +1,5 @@
 import { createAction } from 'redux-actions';
+import { GET_BOOKS } from './actionsType';
 
 const logInAction = createAction('LOG_IN', (isAuth = true, isShow = false) => ({
   isAuth,
@@ -18,6 +19,23 @@ const dontShowContent = createAction('SHOW_LOGIN', (isShow = false) => ({
   isShow,
 }));
 
+const signUpAction = createAction('SIGN_UP', (isSignUp = true) => ({
+  isSignUp,
+}));
+
+const dontSignUpAction = createAction('DONT_SIGN_UP', (isSignUp = false) => ({
+  isSignUp,
+}));
+
+const getBooks = (apiBooks) => ({
+  type: GET_BOOKS,
+  payload: apiBooks,
+});
+
+export default {
+  getBooks,
+};
+
 export {
-  logInAction, logOutAction, showContent, dontShowContent,
+  logInAction, logOutAction, showContent, dontShowContent, signUpAction, dontSignUpAction,
 };

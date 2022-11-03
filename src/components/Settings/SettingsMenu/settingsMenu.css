@@ -1,17 +1,18 @@
 .wrapper_settingsBlock {
-    position: absolute;
-    left: 81%;
-    top: 77%;
+  position: absolute;
+  left: 80%;
+  top: 8%;
   width: 169px;
   height: 200px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   background-color: #ffffff;
   font-size: 18px;
+  z-index: 1;
 }
 
 .wrapper_settingsNone {
-    display: none;
+  display: none;
 }
 
 .settings_menu {
@@ -34,6 +35,10 @@
   padding-bottom: 13px;
 }
 
+.settings_item a{
+  color: #616161;
+}
+
 hr {
   border: 1px solid rgba(181, 181, 181, 0.6);
   margin-bottom: 10px;
@@ -50,10 +55,18 @@ hr {
   color: #616161;
 }
 
-.settings_user-name:hover, .logout:hover, .settings_item:hover {
+.logout a {
+  color: #616161;
+}
+
+.settings_user-name a:hover,
+.logout a:hover,
+.settings_item a:hover {
   color: #ff5d4f;
 }
 
-.settings_user-name, .logout, .settings_item {
-    cursor: pointer;
+.settings_user-name,
+.logout,
+.settings_item {
+  cursor: pointer;
 }

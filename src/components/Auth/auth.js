@@ -1,89 +1,29 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import '../../assets/css/style.css';
 import './auth.css';
-import IconsSVG from '../../assets/img/sprite.svg';
 import '../../assets/css/button.css';
-import { users } from '../../constants/user-credentials.constants';
-import { logInAction, showContent } from '../../store/actions';
+import LogIn from './LogIn/logIn';
+import SignUp from './SignUp/signUp';
 
 const Auth = ({ setshowNavigation }) => {
-  const [userName, setUserName] = useState(null);
-  const [password, setPassword] = useState(null);
+  // const [infForlogIn, setInfForlogIn] = useState(true);
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
-  const dispatch = useDispatch();
+  // const isSignUp = useSelector((state) => state.reducerSignUp.isSignUp);
 
-  function clickLoginForm() {
-    if (userName && password) {
-      users.forEach((item) => {
-        if (item.userName === userName.toString() && item.password === password.toString()) {
-          dispatch(logInAction());
-          dispatch(showContent());
-        }
-      });
-    }
-    setshowNavigation(true);
-  }
-
-  function checkUserName(e) {
-    e.preventDefault();
-    setUserName(e.target.value);
-  }
-
-  function checkPassword(e) {
-    e.preventDefault();
-    setPassword(e.target.value);
-  }
+  // function closeWindowAuth() {
+  //   setOpenWindow(!openWindow);
+  //   setshowNavigation(true);
+  // }
 
   return (
-    <div className={loginCondition ? 'container_backgroundNone' : 'container_backgroundBlock'}>
+    <div className={(loginCondition) ? 'container_backgroundNone' : 'container_backgroundBlock'}>
       <div className="container_sign">
-        <div className="title__sign">Welcome to Fox Library</div>
+        <div className="title__sign">Log In to Fox Library</div>
         <form className="wrapper__input--value">
-          <div className="signupNone">
-            <label className="label_username">Username</label>
-            <input className="input_username" name="username" id="username" type="text"></input>
-            <label className="label__birthdate">Your birthdate</label>
-            <input
-              className="input_birthdate"
-              name="birthdate"
-              id="birthdate"
-              type="birthdate"
-            ></input>
-            <label className="label__email" htmlFor="email">
-              Email
-            </label>
-            <input className="input_email" name="email" id="email" type="email"></input>
-            <label className="label__password">Password</label>
-            <input className="input__password"></input>
-            <button className="btn btn__sign--up" type="reset">
-              Sign up
-            </button>
-            <svg className="close_icon">
-              <use xlinkHref={`${IconsSVG}#close`} />
-            </svg>
-          </div>
-          <div className="login">
-            <label className="label_username">Username</label>
-            <input
-              onChange={(e) => checkUserName(e)}
-              className="input_username"
-              name="username"
-              id="username"
-              type="text"
-            ></input>
-
-            <input onChange={(e) => checkPassword(e)} className="input__password"></input>
-            <button onClick={clickLoginForm} className="btn btn__sign--up" type="reset">
-              <Link to={'books'}>Log in</Link>
-
-            </button>
-            <svg className="close_icon">
-              <use xlinkHref={`${IconsSVG}#close`} />
-            </svg>
-          </div>
+          <SignUp />
+          <LogIn setshowNavigation={setshowNavigation} />
         </form>
       </div>
     </div>

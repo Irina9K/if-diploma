@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  position: relative;
+  /*position: relative;*/
   color: #616161;
 }
 
@@ -14,108 +14,5 @@ header {
   position: relative;
 }
 
-.logo_icon {
-  width: 63%;
-  max-height: 32px;
-  margin-right: 20px;
-}
 
-.header_form{
-  width:81%
-}
-
-.search_icon {
-  position: absolute;
-  top: 36%;
-  right: 62%;
-  height: 18px;
-}
-
-.input_search {
-  /*width: 77%;*/
-  height: 48px;
-  border: 2px solid #ff5d4f;
-  border-radius: 8px;
-}
-
-.input_search::placeholder {
-  padding-left: 50px;
-  color: #b5b5b5;
-  font-size: 16px;
-}
-
-.wrapper_logo_searchBlock {
-  display: flex;
-  width: 62%;
-  justify-content: space-between;
-}
-
-.wrapper_logo_searchNone {
-  display: none;
-}
-
-.nav_headerNone{
-  display: none;
-}
-
-.nav_headerBlock{
-  display: block;
-}
-
-nav {
-  font-size: 20px;
-  font-weight: 700;
-  width: 26%;
-}
-
-.nav_list {
-  list-style-type: none;
-}
-
-.nav_logoutBlock .nav_item:nth-child(2) {
-  padding-left: 48px;
-}
-
-.nav_logoutBlock {
-  display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
-}
-
-.nav_logoutNone {
-  display: none;
-}
-
-.nav_loginBlock {
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-  flex-wrap: wrap;
-  align-items: center;
-  cursor: pointer;
-}
-
-.nav_loginNone {
-  display: none;
-}
-
-.nav_loginBlock .nav_item:nth-child(1){
-  color: #FF5D4F;
-}
-
-.rectangle_user_icon {
-  width: 36px;
-  height: 36px;
-}
-
-.arrow_iconTop {
-  width: 16px;
-  height: 10px;
-}
-
-.arrow_iconBottom {
-  width: 16px;
-  height: 10px;
- transform: rotate(180deg);
-}
 
