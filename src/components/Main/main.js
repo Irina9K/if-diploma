@@ -8,9 +8,11 @@ import Books from './Books/books';
 import MainPage from './MainPage/mainPage';
 import Orders from './Orders/orders';
 import SettingsAccount from '../Settings/settingsAccount';
+import SearchBook from './SearchBook/searchBook';
 
 const Main = () => (
   <main>
+    <SearchBook />
     <MainPage />
     <Books />
     <Orders />
