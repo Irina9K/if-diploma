@@ -38,7 +38,8 @@ const getBooksSearch = (apiBooksSearch) => ({
 });
 
 export default {
-  getBooks, getBooksSearch,
+  getBooks,
+  getBooksSearch,
 };
 
 export {

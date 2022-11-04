@@ -17,10 +17,10 @@ const SearchBook = () => {
     >
       {apiResultSearch.map((book) => (
         <figure key={book.id} className="container_search-content">
-          <img className="search_img" src={book.imageUrl} alt={book.name} />
-          <figcaption className="search_name">
-            <Link to={`/books/${book.id}`}>{book.author}</Link>
-          </figcaption>
+          <Link to={`/books/${book.id}`}>
+            <img className="search_img" src={book.imageUrl} alt={book.name} />
+          </Link>
+          <figcaption className="search_name">{book.author}</figcaption>
           <figcaption className="search_length">{book.name.split(':', 1)}</figcaption>
         </figure>
       ))}

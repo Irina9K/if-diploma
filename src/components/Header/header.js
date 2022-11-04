@@ -20,7 +20,7 @@ const Header = () => {
     <header>
       <Auth setshowNavigation={setshowNavigation} />
       <div className="container header_container">
-        <LogoSearch/>
+        <LogoSearch />
         <NavMenu
           showNavigation={showNavigation}
           showSettingsMenu={showSettingsMenu}

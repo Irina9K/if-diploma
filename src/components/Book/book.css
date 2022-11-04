@@ -21,7 +21,14 @@
     width: 122px;
     height: 185px;
     border-radius: 8px;
+    transition: transform 0.5s;
 }
+
+
+.img_allbook:hover {
+    transform: scale(1.1);
+}
+
 
 .book_status {
     display: flex;

@@ -79,7 +79,7 @@ const LogoSearch = () => {
             required
           ></input>
         </form>
-    </Link>
+      </Link>
     </div>
   );
 };
