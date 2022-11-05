@@ -4,12 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import IconsSVG from '../../../assets/img/sprite.svg';
 import { fetchBooks } from '../../../store/reducerBooks';
 import './logoSearch.css';
+import allAction from '../../../store/actions';
 
-const LogoSearch = ({ setBookSearch, setBookId }) => {
-  const books = useSelector((state) => state.booksReducer.books);
+const LogoSearch = () => {
   const isShowContent = useSelector((state) => state.reducerContent.isShow);
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
   const dispatch = useDispatch();
+
+  const apiResult = useSelector((state) => state.apiReducer.response);
+  const apiResultsSearch = useSelector((state) => state.apiReducerSearch.response);
+  console.log(apiResultsSearch);
+  console.log(apiResult);
 
   function showSearchResult(e) {
     e.preventDefault();
@@ -19,7 +24,6 @@ const LogoSearch = ({ setBookSearch, setBookId }) => {
       alert('Please login to your profile or register.');
       return;
     }
-    console.log(inputValue.length);
 
     if (inputValue.length === 0) {
       // setDisplayError('block');
@@ -29,14 +33,20 @@ const LogoSearch = ({ setBookSearch, setBookId }) => {
 
     dispatch(fetchBooks());
 
-    const filterBooks = books.filter(
+    const filterBooks = apiResult.filter(
       (book) => book.name.toLowerCase().includes(inputValue.toLowerCase()) ||
         book.author.toLowerCase().includes(inputValue.toLowerCase()),
     );
-    setBookId(filterBooks[0].id);
-    setBookSearch(filterBooks);
+
+    dispatch(allAction.getBooksSearch(filterBooks));
+    // setBookId(filterBooks[0].id);
+    // setBookSearch(filterBooks);
     // setDisplayError('none');
     // setDisplay('block');
+  }
+
+  function searchSubmit(e) {
+    e.preventDefault();
   }
 
   return (
@@ -48,22 +58,28 @@ const LogoSearch = ({ setBookSearch, setBookId }) => {
           </svg>
         </div>
       </Link>
+      <Link to={'/search'}>
+        <svg className="search_icon">
+          <use xlinkHref={`${IconsSVG}#search`} />
+        </svg>
 
-      <svg className="search_icon">
-        <use xlinkHref={`${IconsSVG}#search`} />
-      </svg>
-
-      <form /* onBlur={() => dispatch(fetchBooks())} */ className="header_form">
-        <input
-          // value={inputValue}
-          onChange={showSearchResult}
-          className="input_search"
-          type="search"
-          name="search"
-          placeholder="Search by author, title, name"
-          required
-        ></input>
-      </form>
+        <form
+          onSubmit={(e) => {
+            searchSubmit(e);
+          }}
+          className="header_form"
+        >
+          <input
+            // value={inputValue}
+            onChange={showSearchResult}
+            className="input_search"
+            type="search"
+            name="search"
+            placeholder="Search by author, title, name"
+            required
+          ></input>
+        </form>
+      </Link>
     </div>
   );
 };

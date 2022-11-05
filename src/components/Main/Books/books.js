@@ -16,12 +16,16 @@ const Books = () => {
 
   const dispatch = useDispatch();
 
+  const apiResultSearch = useSelector((state) => state.apiReducerSearch.response);
+  console.log(apiResultSearch);
+
   useEffect(() => {
     fetch(`${API_URL}`)
       .then((response) => response.json())
       .then((result) => {
         setArrAllBooks(result);
         dispatch(allAction.getBooks(result));
+        dispatch(allAction.getBooksSearch([]));
       });
   }, []);
 

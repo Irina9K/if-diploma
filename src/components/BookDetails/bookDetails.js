@@ -11,6 +11,8 @@ const BookDetails = () => {
 
   const apiResult = useSelector((state) => state.apiReducer.response);
 
+  console.log(apiResult);
+
   const { bookId } = useParams();
   const thisBook = apiResult.find((book) => book.id === bookId);
 

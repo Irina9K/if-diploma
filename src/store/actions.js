@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { GET_BOOKS } from './actionsType';
+import { GET_BOOK_SEARCH, GET_BOOKS } from './actionsType';
 
 const logInAction = createAction('LOG_IN', (isAuth = true, isShow = false) => ({
   isAuth,
@@ -32,8 +32,14 @@ const getBooks = (apiBooks) => ({
   payload: apiBooks,
 });
 
+const getBooksSearch = (apiBooksSearch) => ({
+  type: GET_BOOK_SEARCH,
+  payload: apiBooksSearch,
+});
+
 export default {
   getBooks,
+  getBooksSearch,
 };
 
 export {

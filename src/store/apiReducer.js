@@ -1,4 +1,4 @@
-import { GET_BOOKS } from './actionsType';
+import { GET_BOOKS, GET_BOOK_SEARCH } from './actionsType';
 
 const apiReducer = (state = [], action) => {
   switch (action.type) {
@@ -11,4 +11,17 @@ const apiReducer = (state = [], action) => {
       return state;
   }
 };
-export default apiReducer;
+
+const apiReducerSearch = (state = [], action) => {
+  switch (action.type) {
+    case GET_BOOK_SEARCH:
+      return {
+        ...state,
+        response: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export { apiReducer, apiReducerSearch };

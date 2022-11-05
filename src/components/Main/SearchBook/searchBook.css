@@ -4,6 +4,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding-bottom: 30px;
+    height: 500px;
 }
 
 .container_searchNone{
@@ -11,9 +12,15 @@
 }
 
 .search_img{
-    width: 200px;
-    height: 299px;
+    width: 144px;
+    height: 200px;
     padding: 10px;
+    transition: transform 0.5s;
+}
+
+.search_img:hover {
+    transform: scale(1.1);
+    /*box-shadow: 10px 5px 5px #B5B5B5;*/
 }
 
 .search_name, .search_length{
