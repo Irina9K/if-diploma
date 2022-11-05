@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 
 import './header.css';
 import '../../assets/css/style.css';
-import Auth from '../Auth/auth';
 import SettingsMenu from '../Settings/SettingsMenu/settingsMenu';
 import LogoSearch from './LogoSearch/logoSearch';
 import NavMenu from './NavMenu/navMenu';
+import LogIn from '../LogIn/logIn';
+import SignUp from '../SignUp/signUp';
 
 const Header = () => {
-  const [showNavigation, setshowNavigation] = useState(false);
+  const [/* showNavigation */, setshowNavigation] = useState(false);
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
+
   // const [booksSearch, setBookSearch] = useState([]);
   // const [bookId, setBookId] = useState([]);
   // const [showSearch, setShowSearch] = useState(false)
@@ -18,11 +20,13 @@ const Header = () => {
 
   return (
     <header>
-      <Auth setshowNavigation={setshowNavigation} />
+        <uselocalStorage/>
+      <LogIn setshowNavigation={setshowNavigation} />
+      <SignUp/>
       <div className="container header_container">
         <LogoSearch />
         <NavMenu
-          showNavigation={showNavigation}
+          // showNavigation={showNavigation}
           showSettingsMenu={showSettingsMenu}
           setShowSettingsMenu={setShowSettingsMenu}
         />

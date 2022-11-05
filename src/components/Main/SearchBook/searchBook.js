@@ -7,9 +7,7 @@ import { useSelector } from 'react-redux';
 
 const SearchBook = () => {
   const isShowContent = useSelector((state) => state.reducerContent.isShow);
-
   const apiResultSearch = useSelector((state) => state.apiReducerSearch.response);
-  console.log(apiResultSearch);
 
   return (
     <div

@@ -11,14 +11,12 @@ import { reducerContent, reducerLogIn, reducerSignUp } from './store/reducer';
 import { apiReducer, apiReducerSearch } from './store/apiReducer';
 import booksReducer from './store/reducerBooks';
 import { booksWatcher } from './components/saga/saga';
+import { reducerUserInf } from './store/reducerUserInf';
 
 // const persistConfig = {
 //   key: 'root',
 //   storage,
 // };
-
-const sagaMiddleware = createSagaMiddleware();
-
 const rootReducer = combineReducers({
   reducerLogIn,
   reducerContent,
@@ -26,11 +24,13 @@ const rootReducer = combineReducers({
   booksReducer,
   apiReducer,
   apiReducerSearch,
+  reducerUserInf,
 });
-
 // const persistedStore = persistReducer(persistConfig, rootReducer);
 
-const store = createStore(/* persistedStore */ rootReducer, applyMiddleware(sagaMiddleware));
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(/* persistedStore, */ rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(booksWatcher);
 // const persistor = persistStore(store);
 
@@ -39,10 +39,10 @@ console.log(store.getState());
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    {/* <PersistGate persistor={persistor}> */}
+     {/* <PersistGate persistor={persistor}> */}
     <React.StrictMode>
       <App />
     </React.StrictMode>
-    {/* </PersistGate> */},
+     {/* </PersistGate> */}
   </Provider>,
 );

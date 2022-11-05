@@ -6,7 +6,7 @@ import IconsSVG from '../../../assets/img/sprite.svg';
 import { dontSignUpAction, logOutAction } from '../../../store/actions';
 import './navMenu.css';
 
-const NavMenu = ({ showNavigation, setShowSettingsMenu, showSettingsMenu }) => {
+const NavMenu = ({ /* showNavigation, */ setShowSettingsMenu, showSettingsMenu }) => {
   // const isSignUp = useSelector((state) => state.reducerSignUp.isSignUp);
   const dispatch = useDispatch();
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
@@ -26,7 +26,7 @@ const NavMenu = ({ showNavigation, setShowSettingsMenu, showSettingsMenu }) => {
   return (
     <nav className={loginCondition ? 'nav_headerBlock' : 'nav_headerNone'}>
       <ul className="nav_list">
-        <div className={!showNavigation ? 'nav_logoutBlock' : 'nav_logoutNone'}>
+        <div className={loginCondition ? 'nav_logoutBlock' : 'nav_logoutNone'}>
           <li onClick={showLogIn} className="nav_item">
             Log In
           </li>
@@ -35,7 +35,7 @@ const NavMenu = ({ showNavigation, setShowSettingsMenu, showSettingsMenu }) => {
           </li>
         </div>
 
-        <div className={showNavigation ? 'nav_loginBlock' : 'nav_loginNone'}>
+        <div className={loginCondition ? 'nav_loginBlock' : 'nav_loginNone'}>
           <li className="nav_item">
             <NavLink to={'books'} className={({ isActive }) => isActive && 'active'}>
               All books

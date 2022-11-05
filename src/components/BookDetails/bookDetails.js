@@ -11,8 +11,6 @@ const BookDetails = () => {
 
   const apiResult = useSelector((state) => state.apiReducer.response);
 
-  console.log(apiResult);
-
   const { bookId } = useParams();
   const thisBook = apiResult.find((book) => book.id === bookId);
 
@@ -32,7 +30,6 @@ const BookDetails = () => {
           {showMore ? `${thisBook.description}` : `${thisBook.description}`.substring(0, 250)}
         </p>
         <button className="btn btn_order" onClick={() => setShowMore(!showMore)}>
-          {' '}
           {showMore ? 'Show less' : 'Show more'}
         </button>
       </figcaption>

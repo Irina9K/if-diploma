@@ -1,2 +1,3 @@
 export const GET_BOOKS = 'GET_BOOKS';
 export const GET_BOOK_SEARCH = 'GET_BOOK_SEARCH';
+export const SET_USER_INF = 'GET_USER_INF';

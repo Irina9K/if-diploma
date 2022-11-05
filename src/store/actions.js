@@ -1,14 +1,12 @@
 import { createAction } from 'redux-actions';
 import { GET_BOOK_SEARCH, GET_BOOKS } from './actionsType';
 
-const logInAction = createAction('LOG_IN', (isAuth = true, isShow = false) => ({
+const logInAction = createAction('LOG_IN', (isAuth = true) => ({
   isAuth,
-  isShow,
 }));
 
-const logOutAction = createAction('LOG_OUT', (isAuth = false, isShow = true) => ({
+const logOutAction = createAction('LOG_OUT', (isAuth = false) => ({
   isAuth,
-  isShow,
 }));
 
 const showContent = createAction('SHOW_LOGIN', (isShow = true) => ({

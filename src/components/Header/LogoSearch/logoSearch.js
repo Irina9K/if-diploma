@@ -12,9 +12,6 @@ const LogoSearch = () => {
   const dispatch = useDispatch();
 
   const apiResult = useSelector((state) => state.apiReducer.response);
-  const apiResultsSearch = useSelector((state) => state.apiReducerSearch.response);
-  console.log(apiResultsSearch);
-  console.log(apiResult);
 
   function showSearchResult(e) {
     e.preventDefault();
