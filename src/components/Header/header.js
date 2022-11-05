@@ -9,7 +9,7 @@ import LogIn from '../LogIn/logIn';
 import SignUp from '../SignUp/signUp';
 
 const Header = () => {
-  const [/* showNavigation */, setshowNavigation] = useState(false);
+  const [, /* showNavigation */ setshowNavigation] = useState(false);
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
 
   // const [booksSearch, setBookSearch] = useState([]);
@@ -20,9 +20,9 @@ const Header = () => {
 
   return (
     <header>
-        <uselocalStorage/>
+      <uselocalStorage />
       <LogIn setshowNavigation={setshowNavigation} />
-      <SignUp/>
+      <SignUp />
       <div className="container header_container">
         <LogoSearch />
         <NavMenu

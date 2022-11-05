@@ -12,7 +12,6 @@ const App = () => (
   <BrowserRouter>
     <Layout>
       <Routes>
-
         <Route exact path={'/'} element={<MainPage />} />
         <Route path={'/search'} element={<SearchBook />} />
         <Route path={'/books'} element={<Books />} />

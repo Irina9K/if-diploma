@@ -16,13 +16,14 @@ const Book = ({ key, name, imageUrl, bookId }) => {
 
   return (
     <figure key={key} className="book_item">
-      <Link to={`/books/${bookId}`}>  <img className="img_allbook" src={imageUrl} alt={name} /></Link>
+      <Link to={`/books/${bookId}`}>
+        {' '}
+        <img className="img_allbook" src={imageUrl} alt={name} />
+      </Link>
 
       <figcaption className="book_status">
         <p className="status_available">{conditionsBook ? 'Available' : 'Taken'}</p>
-        <p className="book_name">
-           {name.split(':', 1)}
-        </p>
+        <p className="book_name">{name.split(':', 1)}</p>
         <p className="who_order">Irina</p>
         <Rating />
 
