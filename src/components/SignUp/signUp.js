@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import IconsSVG from '../../assets/img/sprite.svg';
-import { logOutAction, showContent, signUpAction } from '../../store/actions';
-
-import '../../assets/css/formAuth.css';
 import { setUserInf } from '../../store/reducerUserInf';
+import { logOutAction, showContent, signUpAction } from '../../store/actions';
+import IconsSVG from '../../assets/img/sprite.svg';
+import '../../assets/css/formAuth.css';
 
 const SignUp = () => {
   const [userName, setUserName] = useState('');
@@ -21,7 +20,6 @@ const SignUp = () => {
     dispatch(logOutAction());
     dispatch(signUpAction());
     dispatch(setUserInf(userName, birthdate, email, password));
-    // setInfForlogIn(false);
   }
 
   return (

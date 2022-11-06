@@ -1,16 +1,14 @@
 import React from 'react';
-
-import '../../../assets/css/style.css';
-import './settingsMenu.css';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { dontShowContent, logOutAction } from '../../../store/actions';
+import { dontShowContent } from '../../../store/actions';
+import '../../../assets/css/style.css';
+import './settingsMenu.css';
 
 const SettingsMenu = ({ showSettingsMenu, setShowSettingsMenu }) => {
   const dispatch = useDispatch();
 
   function logOut() {
-    dispatch(logOutAction());
     setShowSettingsMenu(false);
     dispatch(dontShowContent());
   }
@@ -18,6 +16,7 @@ const SettingsMenu = ({ showSettingsMenu, setShowSettingsMenu }) => {
   function clickItemMenu() {
     setShowSettingsMenu(!showSettingsMenu);
   }
+
   return (
     <div className={showSettingsMenu ? 'wrapper_settingsBlock' : 'wrapper_settingsNone'}>
       <div className="settings_menu">

@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Rating from '../Rating/rating';
 import '../../assets/css/style.css';
 import './bookDetails.css';
 import '../../assets/css/button.css';
-import Rating from '../Rating/rating';
 
 const BookDetails = () => {
   const [showMore, setShowMore] = useState(false);
-
   const apiResult = useSelector((state) => state.apiReducer.response);
-
   const { bookId } = useParams();
   const thisBook = apiResult.find((book) => book.id === bookId);
 

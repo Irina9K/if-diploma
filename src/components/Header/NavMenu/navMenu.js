@@ -1,15 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
-import IconsSVG from '../../../assets/img/sprite.svg';
 import { dontSignUpAction, logOutAction } from '../../../store/actions';
+import IconsSVG from '../../../assets/img/sprite.svg';
 import './navMenu.css';
 
-const NavMenu = ({ /* showNavigation, */ setShowSettingsMenu, showSettingsMenu }) => {
-  // const isSignUp = useSelector((state) => state.reducerSignUp.isSignUp);
+const NavMenu = ({ setShowSettingsMenu, showSettingsMenu }) => {
   const dispatch = useDispatch();
-  const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
+  const isShowContent = useSelector((state) => state.reducerContent.isShow);
 
   function showLogIn() {
     dispatch(logOutAction());
@@ -24,9 +22,9 @@ const NavMenu = ({ /* showNavigation, */ setShowSettingsMenu, showSettingsMenu }
   }
 
   return (
-    <nav className={loginCondition ? 'nav_headerBlock' : 'nav_headerNone'}>
+    <nav className= 'nav_headerBlock' >
       <ul className="nav_list">
-        <div className={loginCondition ? 'nav_logoutBlock' : 'nav_logoutNone'}>
+        <div className={!isShowContent ? 'nav_logoutBlock' : 'nav_logoutNone' }>
           <li onClick={showLogIn} className="nav_item">
             Log In
           </li>
@@ -35,7 +33,7 @@ const NavMenu = ({ /* showNavigation, */ setShowSettingsMenu, showSettingsMenu }
           </li>
         </div>
 
-        <div className={loginCondition ? 'nav_loginBlock' : 'nav_loginNone'}>
+        <div className= {isShowContent ? 'nav_loginBlock' : 'nav_loginNone'} >
           <li className="nav_item">
             <NavLink to={'books'} className={({ isActive }) => isActive && 'active'}>
               All books

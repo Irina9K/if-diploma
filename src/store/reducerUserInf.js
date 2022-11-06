@@ -6,10 +6,6 @@ export const reducerUserInf = (state = [], action) => {
       return {
         ...state,
         userInfo: action.payload,
-        // birthdate: action.payload,
-        // email: action.payload,
-        // password: action.payload,
-        // auth: true,
       };
     default:
       return state;
@@ -25,5 +21,3 @@ export const setUserInf = (userName, birthdate, email, password) => ({
     password,
   },
 });
-
-// userName, birthdate, email, password

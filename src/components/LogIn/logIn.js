@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import IconsSVG from '../../assets/img/sprite.svg';
 import { users } from '../../constants/user-credentials.constants';
 import { logInAction, showContent } from '../../store/actions';
+import IconsSVG from '../../assets/img/sprite.svg';
 import '../../assets/css/formAuth.css';
 
-const LogIn = ({ setshowNavigation }) => {
+const LogIn = () => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
   const dispatch = useDispatch();
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
   const userInfo = useSelector((state) => state.reducerUserInf.userInfo);
-
-  if (userInfo) {
-    console.log(Object.values(userInfo));
-    console.log(userInfo.userName);
-  }
 
   function clickLogInForm() {
     if (userName && password) {
@@ -24,15 +19,16 @@ const LogIn = ({ setshowNavigation }) => {
         if (item.userName === userName.toString() && item.password === password.toString()) {
           dispatch(logInAction());
           dispatch(showContent());
-          setshowNavigation(true);
         }
       });
     }
     if (userName && password) {
-      if (userName === (userInfo && userInfo.userName) && password === (userInfo && userInfo.password)) {
+      if (
+        userName === (userInfo && userInfo.userName) &&
+        password === (userInfo && userInfo.password)
+      ) {
         dispatch(logInAction());
         dispatch(showContent());
-        setshowNavigation(true);
       }
     }
   }
@@ -67,7 +63,7 @@ const LogIn = ({ setshowNavigation }) => {
             <button onClick={clickLogInForm} className="btn btn__sign--up" type="reset">
               <Link to={'books'}>Log in</Link>
             </button>
-            <div /* onClick={closeWindowAuth} */ className="wrapper-close-icon">
+            <div className="wrapper-close-icon">
               <svg className="close_icon">
                 <use xlinkHref={`${IconsSVG}#close`} />
               </svg>
