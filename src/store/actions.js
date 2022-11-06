@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { ADD_TO_ORDERS, GET_BOOK_SEARCH, GET_BOOKS } from './actionsType';
+import { ADD_TO_ORDERS, GET_BOOK_SEARCH, GET_BOOKS, REMOVE_TO_ORDERS } from './actionsType';
 
 const logInAction = createAction('LOG_IN', (isAuth = true) => ({
   isAuth,
@@ -40,10 +40,16 @@ const addOrders = (bookId) => ({
   payload: bookId,
 });
 
+const removeOrders = (bookId) => ({
+  type: REMOVE_TO_ORDERS,
+  payload: bookId,
+});
+
 export default {
   getBooks,
   getBooksSearch,
   addOrders,
+  removeOrders,
 };
 
 export {

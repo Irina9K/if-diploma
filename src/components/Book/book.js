@@ -11,12 +11,13 @@ const Book = ({ key, name, imageUrl, bookId }) => {
   const [conditionsBook, setconditionsBook] = useState('true');
   const apiResult = useSelector((state) => state.apiReducer.response);
   const dispatch = useDispatch();
-  const bookOrders = useSelector((state) => state.addOrdersReducer);
-  console.log(bookOrders);
+  const arrOrders = useSelector((state) => state.addOrdersReducer);
+  console.log(Object.values(arrOrders));
 
   function changeConditionsBook() {
     setconditionsBook(!conditionsBook);
-    const bookIdOrders = apiResult.filter((book) => book.id === bookId);
+    const bookIdOrders = apiResult.filter((book) => Object.values(book).includes(bookId));
+    // console.log(bookIdOrders)
     dispatch(allAction.addOrders(bookIdOrders));
   }
 
