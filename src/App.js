@@ -13,7 +13,7 @@ const App = () => (
     <Layout>
       <Routes>
         <Route exact path={'/'} element={<MainPage />} />
-        <Route exact path={'/search'} element={<SearchBook />} />
+        <Route path={'/search'} element={<SearchBook />} />
         <Route path={'/books'} element={<Books />} />
         <Route path={'/orders'} element={<Orders />} />
         <Route path={'/books/:bookId'} element={<BookDetails />} />

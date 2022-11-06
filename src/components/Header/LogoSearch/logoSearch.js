@@ -1,20 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import IconsSVG from '../../../assets/img/sprite.svg';
 import { fetchBooks } from '../../../store/reducerBooks';
-import './logoSearch.css';
 import allAction from '../../../store/actions';
+import IconsSVG from '../../../assets/img/sprite.svg';
+import './logoSearch.css';
 
 const LogoSearch = () => {
   const isShowContent = useSelector((state) => state.reducerContent.isShow);
   const loginCondition = useSelector((state) => state.reducerLogIn.isLogin);
   const dispatch = useDispatch();
-
   const apiResult = useSelector((state) => state.apiReducer.response);
-  const apiResultsSearch = useSelector((state) => state.apiReducerSearch.response);
-  console.log(apiResultsSearch);
-  console.log(apiResult);
 
   function showSearchResult(e) {
     e.preventDefault();
@@ -26,8 +22,6 @@ const LogoSearch = () => {
     }
 
     if (inputValue.length === 0) {
-      // setDisplayError('block');
-      // setDisplay('none');
       return;
     }
 
@@ -39,10 +33,6 @@ const LogoSearch = () => {
     );
 
     dispatch(allAction.getBooksSearch(filterBooks));
-    // setBookId(filterBooks[0].id);
-    // setBookSearch(filterBooks);
-    // setDisplayError('none');
-    // setDisplay('block');
   }
 
   function searchSubmit(e) {
@@ -70,7 +60,6 @@ const LogoSearch = () => {
           className="header_form"
         >
           <input
-            // value={inputValue}
             onChange={showSearchResult}
             className="input_search"
             type="search"

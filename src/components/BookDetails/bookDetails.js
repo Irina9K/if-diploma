@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Rating from '../Rating/rating';
 import '../../assets/css/style.css';
 import './bookDetails.css';
 import '../../assets/css/button.css';
-import Rating from '../Rating/rating';
 
 const BookDetails = () => {
   const [showMore, setShowMore] = useState(false);
-
   const apiResult = useSelector((state) => state.apiReducer.response);
-
-  console.log(apiResult);
-
   const { bookId } = useParams();
   const thisBook = apiResult.find((book) => book.id === bookId);
 
@@ -32,7 +28,6 @@ const BookDetails = () => {
           {showMore ? `${thisBook.description}` : `${thisBook.description}`.substring(0, 250)}
         </p>
         <button className="btn btn_order" onClick={() => setShowMore(!showMore)}>
-          {' '}
           {showMore ? 'Show less' : 'Show more'}
         </button>
       </figcaption>
