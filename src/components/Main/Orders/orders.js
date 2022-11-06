@@ -7,8 +7,8 @@ import OrderList from '../OrderList/orderList';
 
 const Orders = () => (
   <div className="wrapper_orders container">
-      {/* <WaitingList/> */}
-      <OrderList/>
+    {/* <WaitingList/> */}
+    <OrderList />
   </div>
 );
 

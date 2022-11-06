@@ -1,10 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Rating from '../../Rating/rating';
+import allActions from '../../../store/actions';
 
 const OrderList = () => {
   const arrOrders = useSelector((state) => state.addOrdersReducer);
   console.log(arrOrders.booksOrder);
+  const dispatch = useDispatch();
 
   //   function removeToOrderBook(bookId) {
   //     const indexBookRomove = arrOrders.findIndex((i) => i.find((item) => item.id === bookId));
@@ -15,11 +17,15 @@ const OrderList = () => {
   // // dispatch(allActions.removeOrders(arrOrders))
   //   }
 
+  const removeToOrderBook = (bookId) => {
+    dispatch(allActions.removeOrders(bookId));
+  };
+
   return (
     <div className="order_list">
       <p className="order_name">List of your books</p>
       <div className="wrapper_orders-item">
-        {arrOrders.booksOrder.length > 0 ? (
+        {arrOrders.booksOrder ? (
           arrOrders.booksOrder.map((book) => (
             <div key={book.id} className="book_item-order">
               <img className="img_allbook" src={book.imageUrl} alt={book.name.split(':', 1)} />
@@ -27,7 +33,9 @@ const OrderList = () => {
                 {book.name.split(':', 1)} by {book.author}
               </p>
               <Rating />
-              <button className="btn btn_order">Return</button>
+              <button onClick={() => removeToOrderBook(book.id)} className="btn btn_order">
+                Return
+              </button>
             </div>
           ))
         ) : (

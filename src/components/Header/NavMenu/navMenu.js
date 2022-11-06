@@ -22,9 +22,9 @@ const NavMenu = ({ setShowSettingsMenu, showSettingsMenu }) => {
   }
 
   return (
-    <nav className= 'nav_headerBlock' >
+    <nav className="nav_headerBlock">
       <ul className="nav_list">
-        <div className={!isShowContent ? 'nav_logoutBlock' : 'nav_logoutNone' }>
+        <div className={!isShowContent ? 'nav_logoutBlock' : 'nav_logoutNone'}>
           <li onClick={showLogIn} className="nav_item">
             Log In
           </li>
@@ -33,7 +33,7 @@ const NavMenu = ({ setShowSettingsMenu, showSettingsMenu }) => {
           </li>
         </div>
 
-        <div className= {isShowContent ? 'nav_loginBlock' : 'nav_loginNone'} >
+        <div className={isShowContent ? 'nav_loginBlock' : 'nav_loginNone'}>
           <li className="nav_item">
             <NavLink to={'books'} className={({ isActive }) => isActive && 'active'}>
               All books

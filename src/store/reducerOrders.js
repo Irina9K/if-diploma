@@ -8,7 +8,8 @@ const addOrdersReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_ORDERS:
       return {
-        ...state, booksOrder: state.booksOrder.concat(action.payload),
+        ...state,
+        booksOrder: state.booksOrder.concat(action.payload),
       };
 
     case REMOVE_TO_ORDERS:

@@ -17,10 +17,7 @@ const Header = () => {
       <SignUp />
       <div className="container header_container">
         <LogoSearch />
-        <NavMenu
-          showSettingsMenu={showSettingsMenu}
-          setShowSettingsMenu={setShowSettingsMenu}
-        />
+        <NavMenu showSettingsMenu={showSettingsMenu} setShowSettingsMenu={setShowSettingsMenu} />
       </div>
       <SettingsMenu showSettingsMenu={showSettingsMenu} setShowSettingsMenu={setShowSettingsMenu} />
     </header>
