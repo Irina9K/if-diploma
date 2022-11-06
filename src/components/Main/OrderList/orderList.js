@@ -8,15 +8,6 @@ const OrderList = () => {
   console.log(arrOrders.booksOrder);
   const dispatch = useDispatch();
 
-  //   function removeToOrderBook(bookId) {
-  //     const indexBookRomove = arrOrders.findIndex((i) => i.find((item) => item.id === bookId));
-  //     const removeBook = arrOrders.splice(indexBookRomove, 1);
-  //       logger(removeBook)
-  //     console.log(arrOrders);
-  //     dispatch(allActions.addOrders(arrOrders))
-  // // dispatch(allActions.removeOrders(arrOrders))
-  //   }
-
   const removeToOrderBook = (bookId) => {
     dispatch(allActions.removeOrders(bookId));
   };

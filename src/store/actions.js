@@ -25,6 +25,14 @@ const dontSignUpAction = createAction('DONT_SIGN_UP', (isSignUp = false) => ({
   isSignUp,
 }));
 
+const taken = createAction('TAKEN', (isTaken = 'Taken') => ({
+  isTaken,
+}));
+
+const available = createAction('AVAILABLE', (isTaken = 'Available') => ({
+  isTaken,
+}));
+
 const getBooks = (apiBooks) => ({
   type: GET_BOOKS,
   payload: apiBooks,
@@ -53,5 +61,5 @@ export default {
 };
 
 export {
-  logInAction, logOutAction, showContent, dontShowContent, signUpAction, dontSignUpAction,
+  logInAction, logOutAction, showContent, dontShowContent, signUpAction, dontSignUpAction, available, taken,
 };
