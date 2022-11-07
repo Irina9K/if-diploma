@@ -61,5 +61,12 @@ export default {
 };
 
 export {
-  logInAction, logOutAction, showContent, dontShowContent, signUpAction, dontSignUpAction, available, taken,
+  logInAction,
+  logOutAction,
+  showContent,
+  dontShowContent,
+  signUpAction,
+  dontSignUpAction,
+  available,
+  taken,
 };

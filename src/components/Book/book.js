@@ -36,7 +36,11 @@ const Book = ({ key, name, imageUrl, bookId }) => {
         <p className="book_name">{name.split(':', 1)}</p>
         <p className="who_order">{!conditionsBook ? userInfo && userInfo.userName : ''}</p>
         <Rating />
-        <button disabled={disabled} onClick={() => changeConditionsBook(bookId)} className="btn btn_order">
+        <button
+          disabled={disabled}
+          onClick={() => changeConditionsBook(bookId)}
+          className="btn btn_order"
+        >
           Order
         </button>
       </figcaption>

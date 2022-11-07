@@ -5,7 +5,7 @@ import allActions from '../../../store/actions';
 
 const OrderList = () => {
   const arrOrders = useSelector((state) => state.addOrdersReducer);
-  console.log(arrOrders.booksOrder);
+  console.log(arrOrders);
   const dispatch = useDispatch();
 
   const removeToOrderBook = (bookId) => {
@@ -16,7 +16,7 @@ const OrderList = () => {
     <div className="order_list">
       <p className="order_name">List of your books</p>
       <div className="wrapper_orders-item">
-        {arrOrders.booksOrder ? (
+        {arrOrders.booksOrder.length ? (
           arrOrders.booksOrder.map((book) => (
             <div key={book.id} className="book_item-order">
               <img className="img_allbook" src={book.imageUrl} alt={book.name.split(':', 1)} />
