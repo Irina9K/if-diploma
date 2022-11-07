@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Rating from '../../Rating/rating';
 import allActions from '../../../store/actions';
 
@@ -19,7 +20,9 @@ const OrderList = () => {
         {arrOrders.booksOrder.length ? (
           arrOrders.booksOrder.map((book) => (
             <div key={book.id} className="book_item-order">
-              <img className="img_allbook" src={book.imageUrl} alt={book.name.split(':', 1)} />
+                <Link to={`/books/${book.id}`}>
+                    <img className="img_allbook" src={book.imageUrl} alt={book.name.split(':', 1)} />
+                </Link>
               <p className="book_name-order">
                 {book.name.split(':', 1)} by {book.author}
               </p>

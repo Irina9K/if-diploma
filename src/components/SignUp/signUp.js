@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserInf } from '../../store/reducerUserInf';
-import { logOutAction, showContent, signUpAction } from '../../store/actions';
+import { logOutAction, signUpAction } from '../../store/actions';
 import IconsSVG from '../../assets/img/sprite.svg';
 import '../../assets/css/formAuth.css';
 
@@ -16,10 +16,13 @@ const SignUp = () => {
 
   function clickSignUpForm() {
     dispatch(signUpAction());
-    dispatch(showContent());
     dispatch(logOutAction());
     dispatch(signUpAction());
     dispatch(setUserInf(userName, birthdate, email, password));
+  }
+
+  function closeSignupWindow() {
+    dispatch(signUpAction());
   }
 
   return (
@@ -62,9 +65,11 @@ const SignUp = () => {
             <button onClick={clickSignUpForm} className="btn btn__sign--up" type="button">
               Sign up
             </button>
-            <svg className="close_icon">
-              <use xlinkHref={`${IconsSVG}#close`} />
-            </svg>
+            <div onClick={closeSignupWindow}>
+              <svg className="close_icon">
+                <use xlinkHref={`${IconsSVG}#close`}/>
+              </svg>
+            </div>
           </div>
         </form>
       </div>

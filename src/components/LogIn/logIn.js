@@ -43,6 +43,10 @@ const LogIn = () => {
     setPassword(e.target.value);
   }
 
+  function closeLoginWindow() {
+    dispatch(logInAction());
+  }
+
   return (
     <div className={loginCondition ? 'container_backgroundNone' : 'container_backgroundBlock'}>
       <div className="container_sign">
@@ -63,7 +67,7 @@ const LogIn = () => {
             <button onClick={clickLogInForm} className="btn btn__sign--up" type="reset">
               <Link to={'books'}>Log in</Link>
             </button>
-            <div className="wrapper-close-icon">
+            <div onClick={closeLoginWindow} className="wrapper-close-icon">
               <svg className="close_icon">
                 <use xlinkHref={`${IconsSVG}#close`} />
               </svg>
