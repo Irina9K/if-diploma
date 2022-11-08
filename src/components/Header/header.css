@@ -11,7 +11,27 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  position: relative;
+  /*position: relative;*/
+}
+
+.menu_iconBlock,
+.menu_close-iconBlock {
+  display: none;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 3%;
+  right: 10%;
+}
+
+@media screen and (max-width: 720px) {
+  .nav_headerBlock {
+    display: none;
+  }
+
+  .menu_iconBlock {
+    display: block;
+  }
 }
 
 

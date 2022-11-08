@@ -20,9 +20,9 @@ const OrderList = () => {
         {arrOrders.booksOrder.length ? (
           arrOrders.booksOrder.map((book) => (
             <div key={book.id} className="book_item-order">
-                <Link to={`/books/${book.id}`}>
-                    <img className="img_allbook" src={book.imageUrl} alt={book.name.split(':', 1)} />
-                </Link>
+              <Link to={`/books/${book.id}`}>
+                <img className="img_allbook" src={book.imageUrl} alt={book.name.split(':', 1)} />
+              </Link>
               <p className="book_name-order">
                 {book.name.split(':', 1)} by {book.author}
               </p>

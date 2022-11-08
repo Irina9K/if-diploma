@@ -34,14 +34,17 @@ const NavMenu = ({ setShowSettingsMenu, showSettingsMenu }) => {
         </div>
 
         <div className={isShowContent ? 'nav_loginBlock' : 'nav_loginNone'}>
-          <li className="nav_item">
-            <NavLink to={'books'} className={({ isActive }) => isActive && 'active'}>
-              All books
-            </NavLink>
-          </li>
-          <li className="nav_item">
-            <NavLink to={'orders'}>Your orders</NavLink>
-          </li>
+         <div className='wrapper_nav'>
+           <li className="nav_item">
+             <NavLink to={'books'} className={({ isActive }) => isActive && 'active'}>
+               All books
+             </NavLink>
+           </li>
+           <li className="nav_item">
+             <NavLink to={'orders'}>Your orders</NavLink>
+           </li>
+         </div>
+
           <li onClick={showSettings}>
             <svg className="rectangle_user_icon">
               <use xlinkHref={`${IconsSVG}#user`} />
@@ -53,6 +56,7 @@ const NavMenu = ({ setShowSettingsMenu, showSettingsMenu }) => {
             </svg>
           </li>
         </div>
+
       </ul>
     </nav>
   );

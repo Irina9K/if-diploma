@@ -67,7 +67,7 @@ const SignUp = () => {
             </button>
             <div onClick={closeSignupWindow}>
               <svg className="close_icon">
-                <use xlinkHref={`${IconsSVG}#close`}/>
+                <use xlinkHref={`${IconsSVG}#close`} />
               </svg>
             </div>
           </div>
