@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUserInf } from '../../store/reducerUserInf';
+import { setUserInf } from '../../store/userInfReducer';
 import { logOutAction, signUpAction } from '../../store/actions';
 import IconsSVG from '../../assets/img/sprite.svg';
 import '../../assets/css/formAuth.css';
@@ -10,7 +10,6 @@ const SignUp = () => {
   const [birthdate, setBirthdate] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const isSignUp = useSelector((state) => state.reducerSignUp.isSignUp);
   const dispatch = useDispatch();
 

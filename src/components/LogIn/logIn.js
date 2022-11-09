@@ -22,6 +22,7 @@ const LogIn = () => {
         }
       });
     }
+
     if (userName && password) {
       if (
         userName === (userInfo && userInfo.userName) &&
@@ -62,7 +63,6 @@ const LogIn = () => {
               type="text"
             ></input>
             <label className="label_username">Password</label>
-
             <input onChange={(e) => checkPassword(e)} className="input__password"></input>
             <button onClick={clickLogInForm} className="btn btn__sign--up" type="reset">
               <Link to={'books'}>Log in</Link>

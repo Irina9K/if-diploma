@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../../assets/css/style.css';
 import './settingsAcount.css';
 import '../../assets/css/button.css';

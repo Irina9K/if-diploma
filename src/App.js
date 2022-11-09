@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout/Layout';
-import MainPage from './components/Main/MainPage/mainPage';
-import Books from './components/Main/Books/books';
-import Orders from './components/Main/Orders/orders';
+import Layout from './connectors/Layout/Layout';
+import MainPage from './components/MainPage/mainPage';
+import Books from './components/Books/books';
+import Orders from './components/Orders/orders';
 import BookDetails from './components/BookDetails/bookDetails';
 import SettingsAccount from './components/Settings/settingsAccount';
-import SearchBook from './components/Main/SearchBook/searchBook';
+import SearchBook from './components/SearchBook/searchBook';
 
 const App = () => (
   <BrowserRouter>

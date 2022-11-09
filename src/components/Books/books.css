@@ -1,0 +1,25 @@
+.all_booksBlock {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1230px;
+  background: #ffffff;
+  border-radius: 16px;
+  min-height: 400px;
+}
+
+.all_booksNone {
+  display: none;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 26px 32px;
+}
+
+.btn_more {
+  width: 185px;
+  margin: 32px auto 0;
+  font-size: 20px;
+}
