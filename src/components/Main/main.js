@@ -9,12 +9,12 @@ import './main.css';
 import '../../assets/css/button.css';
 
 const Main = () => (
-    <main>
-      <SearchBook />
-      <MainPage />
-      <Books />
-      <Orders />
-      <SettingsAccount />
-    </main>
+  <main>
+    <SearchBook />
+    <MainPage />
+    <Books />
+    <Orders />
+    <SettingsAccount />
+  </main>
 );
 export default Main;
