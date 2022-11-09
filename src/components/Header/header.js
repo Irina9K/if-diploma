@@ -18,10 +18,7 @@ const Header = () => {
         <LogoSearch />
         <NavMenu showBurgerMenu={showBurgerMenu} setShoeBurgerMenu={setShowBurgerMenu} />
       </div>
-      <div
-        onClick={() => setShowBurgerMenu(!showBurgerMenu)}
-        className="wrapper_menu-icon"
-      >
+      <div onClick={() => setShowBurgerMenu(!showBurgerMenu)} className="wrapper_menu-icon">
         <svg className={!showBurgerMenu ? 'menu_iconBlock' : 'menu_iconNone'}>
           <use xlinkHref={`${IconsSVG}#menu`} />
         </svg>

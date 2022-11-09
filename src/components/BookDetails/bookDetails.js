@@ -27,10 +27,7 @@ const BookDetails = () => {
         <p className="book_details-description">
           {showMore ? `${thisBook.description}` : `${thisBook.description}`.substring(0, 250)}
         </p>
-        <button
-          className="btn btn_order"
-          onClick={() => setShowMore(!showMore)}
-        >
+        <button className="btn btn_order" onClick={() => setShowMore(!showMore)}>
           {showMore ? 'Show less' : 'Show more'}
         </button>
       </figcaption>

@@ -45,7 +45,7 @@ const SignUp = () => {
               className="input_birthdate"
               name="birthdate"
               id="birthdate"
-              type="birthdate"
+              type="date"
             ></input>
             <label className="label__email" htmlFor="email">
               Email
