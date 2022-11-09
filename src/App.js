@@ -9,18 +9,18 @@ import SettingsAccount from './components/Settings/settingsAccount';
 import SearchBook from './components/Main/SearchBook/searchBook';
 
 const App = () => (
-  <BrowserRouter>
-    <Layout>
-      <Routes>
-        <Route exact path={'/'} element={<MainPage />} />
-        <Route path={'/search'} element={<SearchBook />} />
-        <Route path={'/books'} element={<Books />} />
-        <Route path={'/orders'} element={<Orders />} />
-        <Route path={'/books/:bookId'} element={<BookDetails />} />
-        <Route path={'/settings'} element={<SettingsAccount />} />
-      </Routes>
-    </Layout>
-  </BrowserRouter>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route exact path={'/'} element={<MainPage />} />
+          <Route path={'/search'} element={<SearchBook />} />
+          <Route path={'/books'} element={<Books />} />
+          <Route path={'/orders'} element={<Orders />} />
+          <Route path={'/books/:bookId'} element={<BookDetails />} />
+          <Route path={'/settings'} element={<SettingsAccount />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
 );
 
 export default App;

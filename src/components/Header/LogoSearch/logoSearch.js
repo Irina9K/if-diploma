@@ -27,10 +27,10 @@ const LogoSearch = () => {
 
     dispatch(fetchBooks());
 
-    const filterBooks = apiResult.filter(
-      (book) => book.name.toLowerCase().includes(inputValue.toLowerCase()) ||
-        book.author.toLowerCase().includes(inputValue.toLowerCase()),
-    );
+    const filterBooks = apiResult.filter((book) => (
+      book.name.toLowerCase().includes(inputValue.toLowerCase()) ||
+        book.author.toLowerCase().includes(inputValue.toLowerCase())
+    ));
 
     dispatch(allAction.getBooksSearch(filterBooks));
   }
@@ -71,7 +71,6 @@ const LogoSearch = () => {
           </form>
         </div>
       </Link>
-
     </div>
   );
 };

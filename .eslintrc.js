@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ['react', 'babel', 'import'],
   rules: {
+    // "arrow-body-style": ["error", "always"],
     'import/no-named-as-default': 0,
     'default-param-last': 0,
     'no-underscore-dangle': 'off',

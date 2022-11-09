@@ -63,7 +63,10 @@ const LogIn = () => {
             ></input>
             <label className="label_username">Password</label>
 
-            <input onChange={(e) => checkPassword(e)} className="input__password"></input>
+            <input
+              onChange={(e) => checkPassword(e)}
+              className="input__password"
+            ></input>
             <button onClick={clickLogInForm} className="btn btn__sign--up" type="reset">
               <Link to={'books'}>Log in</Link>
             </button>

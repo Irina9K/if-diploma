@@ -15,7 +15,9 @@ const addOrdersReducer = (state = initialState, action) => {
     case REMOVE_TO_ORDERS:
       return {
         ...state,
-        booksOrder: [...state.booksOrder.filter((book) => book.id !== action.payload)],
+        booksOrder: [
+          ...state.booksOrder.filter((book) => book.id !== action.payload),
+        ],
       };
     default:
       return state;

@@ -40,7 +40,10 @@ const NavMenu = ({ showBurgerMenu }) => {
           <div className={isShowContent ? 'nav_loginBlock' : 'nav_loginNone'}>
             <div className="wrapper_nav">
               <li className="nav_item">
-                <NavLink to={'books'} className={({ isActive }) => isActive && 'active'}>
+                <NavLink
+                  to={'books'}
+                  className={({ isActive }) => isActive && 'active'}
+                >
                   All books
                 </NavLink>
               </li>
@@ -70,7 +73,10 @@ const NavMenu = ({ showBurgerMenu }) => {
           </div>
           <div className={isShowContent ? 'menu_navigationBlock' : 'menu_navigationNone'}>
             <p>
-              <NavLink to={'books'} className={({ isActive }) => isActive && 'active'}>
+              <NavLink
+                to={'books'}
+                className={({ isActive }) => isActive && 'active'}
+              >
                 All books
               </NavLink>
             </p>

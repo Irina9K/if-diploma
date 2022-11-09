@@ -27,22 +27,11 @@ const Books = () => {
   }, []);
 
   return (
-    <div className={`container ${isShowContent ? 'all_booksBlock' : 'all_booksNone'}`}>
+    <div className={` ${isShowContent ? 'all_booksBlock' : 'all_booksNone'}`}>
       <h2>All books</h2>
       <div className="book_list">
         {showMore ?
           arrAllBooks.map((book) => (
-              <Book
-                key={book.id}
-                name={book.name}
-                imageUrl={book.imageUrl}
-                showMore={showMore}
-                bookId={book.id}
-              />
-          ))
-          : arrAllBooks
-            .slice(0, 4)
-            .map((book) => (
                 <Book
                   key={book.id}
                   name={book.name}
@@ -50,9 +39,21 @@ const Books = () => {
                   showMore={showMore}
                   bookId={book.id}
                 />
-            ))}
+          ))
+          : arrAllBooks.slice(0, 4).map((book) => (
+                <Book
+                  key={book.id}
+                  name={book.name}
+                  imageUrl={book.imageUrl}
+                  showMore={showMore}
+                  bookId={book.id}
+                />
+          ))}
       </div>
-      <button className="btn btn_more" onClick={() => setShowMore(!showMore)}>
+      <button
+        className="btn btn_more"
+        onClick={() => setShowMore(!showMore)}
+      >
         {showMore ? 'Show less' : 'Show more'}
       </button>
     </div>

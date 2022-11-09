@@ -1,7 +1,7 @@
 .book_details{
     display: flex;
     flex-direction: row;
-    width: 1230px;
+    max-width: 1230px;
     background-color: #FFFFFF;
     border-radius: 16px;
 }
