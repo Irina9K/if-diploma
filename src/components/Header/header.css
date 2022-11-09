@@ -11,7 +11,50 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  position: relative;
+  /*position: relative;*/
+}
+
+.wrapper_menu-icon{
+  display: none;
+}
+
+.menu_iconBlock,
+.menu_close-iconBlock {
+  display: block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 5%;
+  right: 10%;
+}
+
+.menu_iconBlockNone,
+.menu_close-iconNone{
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .wrapper_menu-icon{
+    display: block;
+  }
+
+  .menu_iconBlock,
+  .menu_close-iconBlock {
+    display: block;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 5%;
+    right: 10%;
+  }
+
+  .nav_headerNone {
+    display: none;
+  }
+
+  .menu_close-iconNone, .menu_iconNone {
+    display: none;
+  }
 }
 
 

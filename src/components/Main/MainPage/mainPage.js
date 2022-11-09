@@ -25,7 +25,7 @@ const MainPage = () => {
         <div className="main_content-text">
           Over 400.000 books from fiction to the business literature
         </div>
-        <button onClick={clickButtonStart} className="btn main_btn">
+        <button onClick={clickButtonStart} className=" main_btn ">
           {isShowContent ? (
             <Link to={'books'}> Let’s start</Link>
           ) : (

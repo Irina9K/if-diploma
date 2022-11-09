@@ -4,7 +4,9 @@ import { dontShowContent,
   logInAction,
   logOutAction,
   showContent,
-  signUpAction } from './actions';
+  signUpAction,
+  available,
+  taken } from './actions';
 
 // const defaultState = {
 //   isLogin: true,
@@ -50,6 +52,18 @@ const reducerSignUp = handleActions(
   },
 );
 
+const reducerConditionBook = handleActions(
+  {
+    [combineActions(taken, available)]: (state, { payload: { isTaken } }) => ({
+      ...state,
+      isTaken,
+    }),
+  },
+  {
+    isTaken: 'Available',
+  },
+);
+
 export {
-  reducerLogIn, reducerContent, reducerSignUp,
+  reducerLogIn, reducerContent, reducerSignUp, reducerConditionBook,
 };

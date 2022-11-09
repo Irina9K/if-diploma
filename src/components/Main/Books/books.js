@@ -27,7 +27,7 @@ const Books = () => {
   }, []);
 
   return (
-    <div className={isShowContent ? 'all_booksBlock' : 'all_booksNone'}>
+    <div className={` ${isShowContent ? 'all_booksBlock' : 'all_booksNone'}`}>
       <h2>All books</h2>
       <div className="book_list">
         {showMore ?
