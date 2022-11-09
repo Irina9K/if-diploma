@@ -15,7 +15,7 @@ const SettingsAccount = () => {
         <div className="settings_header">
           <h2>Settings</h2>
           <svg className="photo_icon">
-            <use xlinkHref={`${IconsSVG}#ellipse_user`} />
+            <use xlinkHref={`${IconsSVG}#user2`} />
           </svg>
           <button className="btn btn_order">Change photo</button>
         </div>

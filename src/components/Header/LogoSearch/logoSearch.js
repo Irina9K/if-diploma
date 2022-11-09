@@ -71,6 +71,7 @@ const LogoSearch = () => {
           </form>
         </div>
       </Link>
+
     </div>
   );
 };

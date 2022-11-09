@@ -83,8 +83,6 @@ input[type='search']{
 }
 
 @media screen and (max-width:1064px) {
-
-
     .wrapper_logo_searchBlock {
         width: 313px;
     }
@@ -110,7 +108,7 @@ input[type='search']{
     }
 
     input[type='search'] {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     .nav_headerBlock {
