@@ -27,7 +27,14 @@ const SignUp = () => {
   return (
     <div className={isSignUp ? 'container_backgroundNone' : 'container_backgroundBlock'}>
       <div className="container_sign">
-        <div className="title__sign">Welcome to Fox Library</div>
+        <div className="title__sign">
+          Welcome to Fox Library
+          <div onClick={closeSignupWindow}>
+            <svg className="close_icon">
+              <use xlinkHref={`${IconsSVG}#close`} />
+            </svg>
+          </div>
+        </div>
         <form className="wrapper__input--value">
           <div className="signupBlock">
             <label className="label_username">Username</label>
@@ -64,11 +71,6 @@ const SignUp = () => {
             <button onClick={clickSignUpForm} className="btn btn__sign--up" type="button">
               Sign up
             </button>
-            <div onClick={closeSignupWindow}>
-              <svg className="close_icon">
-                <use xlinkHref={`${IconsSVG}#close`} />
-              </svg>
-            </div>
           </div>
         </form>
       </div>

@@ -61,14 +61,15 @@ input {
     margin-bottom: 30px;
 }
 
-
-
 .close_icon {
     position: absolute;
     width: 16px;
+    height: 16px;
     bottom: 75%;
-    right: 39%;
+    right: -9%;
 }
+
+
 
 .btn__sign--up a{
     color:#FFFFFF;

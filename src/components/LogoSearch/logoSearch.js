@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import SearchInput from '../SearchInput/searchInput';
 // import { fetchBooks } from '../../store/booksReducer';
 import allAction from '../../store/actions';
 import IconsSVG from '../../assets/img/sprite.svg';
@@ -48,29 +49,13 @@ const LogoSearch = () => {
           </svg>
         </div>
       </Link>
-      <Link to={'/search'}>
-        <div className="wrapper_search">
-          <svg className="search_icon">
-            <use xlinkHref={`${IconsSVG}#search`} />
-          </svg>
-
-          <form
-            onSubmit={(e) => {
-              searchSubmit(e);
-            }}
-            className="header_form"
-          >
-            <input
-              onChange={showSearchResult}
-              className="input_search"
-              type="search"
-              name="search"
-              placeholder="Search by author, title, name"
-              required
-            ></input>
-          </form>
-        </div>
-      </Link>
+      {isShowContent ? (
+        <Link to={'/search'}>
+          <SearchInput searchSubmit={searchSubmit} showSearchResult={showSearchResult}/>
+        </Link>
+      ) : (
+        <SearchInput searchSubmit={searchSubmit} showSearchResult={showSearchResult}/>
+      )}
     </div>
   );
 };
