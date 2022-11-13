@@ -83,10 +83,10 @@
 }
 
 @media screen and (max-width: 850px) {
-    .book_details-img {
-        width: 160px;
-        height: 248px;
-    }
+  .book_details-img {
+    width: 160px;
+    height: 248px;
+  }
 }
 
 @media screen and (max-width: 550px) {
